@@ -1,0 +1,21 @@
+.SCContent {
+    min-height: 100vh;
+    padding-top: 50px;
+  }
+  
+.item {
+    text-align: right;
+    position: relative;
+    right: 270px;
+}
+  
+.removeBtn {
+    position: relative;
+    left: 20px;
+}
+  
+#paymentBtn {
+    color: inherit;
+    text-decoration: none;
+    margin-bottom: 20px;
+}

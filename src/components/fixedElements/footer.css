@@ -1,0 +1,61 @@
+/*------------------------------------------------------------------------------------------------------*/
+@font-face {
+    font-family: shuneet;
+    src: url("../../fonts/shuneet/shuneet_bold_v2.otf");
+  }
+  
+  /*------------------------------------------------------------------------------------------------------*/
+  footer {
+    padding: 0;
+    margin: 0;
+    background-color: #383838;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    height: 50px;
+  }
+  
+  #content {
+    color: white;
+    position: relative;
+  }
+  
+  #links {
+    margin: 10px auto;
+    /* position: relative; */
+  }
+  
+  #links a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  #links p {
+    position: relative;
+    bottom: 15px;
+  }
+  
+  #middle {
+    border-right: 2px solid white;
+    border-left: 2px solid white;
+    height: 30px;
+    /* margin-top: 10px; */
+  }
+
+  #middle p {
+    margin-bottom: 10px;
+  }
+  
+  #copyRight2 {
+    position: absolute;
+    left: 35px;
+    top: 25px;
+  }
+  
+  #copyRight2 p {
+    font-size: 12px;
+    margin-left: 5px;
+    position: relative;
+    bottom: 14px;
+  }
+  
+ 

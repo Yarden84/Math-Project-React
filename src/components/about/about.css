@@ -1,0 +1,118 @@
+/*------------------------------------------------------------------------------------------------------*/
+ * {
+    padding: 0;
+    margin: 0;
+  }
+ 
+
+  .bgAbout {
+    background-color: #F2C389;
+    border-top: 1px solid#F2C389;
+    border-bottom: 1px solid #F2C389;
+  }
+  
+  .content {
+    border-radius: 20px;
+    -webkit-box-shadow: 2px 0 15px 0;
+            box-shadow: 2px 0 15px 0;
+    background-color: white;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 50px 30px;
+    min-height: 500px;
+    /*img animations:*/
+    padding-right: 50px !important;
+  }
+  
+  .content .shoppingCart {
+    margin-right: 6px;
+  }
+  
+  .content .shoppingCartLink {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  .content h1 {
+    font-family: hadasimclm;
+    font-size: 45px;
+  }
+  
+  .content p {
+    margin-top: 15px;
+  }
+  
+  .content pre {
+    font-family: inherit;
+    font-size: inherit;
+  }
+  
+  .content .understandImg {
+    position: relative;
+    height: 80px;
+    margin-top: 20px;
+  }
+  
+  .content .understandBtn {
+    margin-right: 100px;
+  }
+  
+  .content .spinImg {
+    -webkit-animation: spin 1s linear infinite;
+            animation: spin 1s linear infinite;
+  }
+  
+  @-webkit-keyframes spin {
+    0% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+    25% {
+      -webkit-transform: rotate(20deg);
+              transform: rotate(20deg);
+    }
+    50% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+    75% {
+      -webkit-transform: rotate(-20deg);
+              transform: rotate(-20deg);
+    }
+  }
+  
+  @keyframes spin {
+    0% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+    25% {
+      -webkit-transform: rotate(20deg);
+              transform: rotate(20deg);
+    }
+    50% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+    75% {
+      -webkit-transform: rotate(-20deg);
+              transform: rotate(-20deg);
+    }
+  }
+  
+  .content .details {
+    padding-right: 20px;
+    width: 800px;
+  }
+  
+  .content table {
+    margin-right: 165px;
+  }
+  
+  .content table tr:nth-child(7) td:nth-child(2) {
+    border-top: 1px solid black;
+  }
+  
+  /*------------------------------------------------------------------------------------------------------*/
+ 
+  /*# sourceMappingURL=about.css.map */
