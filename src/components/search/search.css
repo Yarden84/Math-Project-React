@@ -1,0 +1,30 @@
+#searchResult{
+    position: absolute;
+    left: 50px;
+    top: 51px;
+    background-color: #3a87b4; 
+    color: white;
+    width: 206px;  
+    z-index: 2;
+}
+
+#searchResult .link{
+    position: relative;
+    text-align: right;
+    border-bottom: 1px solid #1B3F54;
+    width: 100%;
+    cursor: pointer;
+}
+
+#searchResult .link .nav-link{
+    text-decoration: none;
+    color: inherit;
+    padding-right: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+#searchResult .link:hover{
+    background-color: #f3f8fb;
+    color: black;
+}

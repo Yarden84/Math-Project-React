@@ -9,7 +9,7 @@ library.add(faEnvelope);
 library.add(faPhoneSquare);
 
 class Contact extends Component {
-    state = {}
+
     render() {
         return (
             <div class="bgContact">

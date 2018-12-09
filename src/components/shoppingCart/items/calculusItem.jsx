@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 class CalculusItem extends Component {
-    state = {}
+
     render() {
         return (
             <tr className="calculusRow">

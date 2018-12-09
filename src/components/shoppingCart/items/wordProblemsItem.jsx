@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 class WordProblemsItem extends Component {
-    state = {}
+
     render() {
         return (
             <tr className="wordProblemsRow">

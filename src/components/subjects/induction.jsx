@@ -12,63 +12,73 @@ import { faCartArrowDown } from '@fortawesome/free-solid-svg-icons';
 library.add(faCartArrowDown);
 
 class Induction extends Component {
-    state = {
-        slide1: true,
-        slide2: true,
-        slide3: true,
-        answer: false,
-        spin: "",
-        move: "",
-        imgBtnClicked: false
-    }
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.openContent = this.openContent.bind(this);
         this.startRotate = this.startRotate.bind(this);
         this.stopRotate = this.stopRotate.bind(this);
+
+        this.props.setSlide1(true);
+        this.props.setSlide2(true);
+        this.props.setSlide3(true);
+        this.props.setAnswer1(false);
+        this.props.setSpin("");
+        this.props.setMove("");
+        this.props.setImgBtnClicked(false);
+
+        if (localStorage.getItem('slide1') == 'false') {
+            this.props.setSlide1(false);
+            localStorage.setItem('slide1', 'true');
+        }
+        if (localStorage.getItem('slide2') == 'false') {
+            this.props.setSlide2(false);
+            localStorage.setItem('slide2', 'true');
+        }
     }
+
+
 
     openContent(x) {
         if (x === 'slide1') {
-            this.setState({ slide1: !this.state.slide1 });
+            this.props.setSlide1(!this.props.slide1);
         }
         else
             if (x === 'slide2') {
-                this.setState({ slide2: !this.state.slide2 });
+                this.props.setSlide2(!this.props.slide2);
             }
             else {
-                this.setState({ slide3: !this.state.slide3 });
-                this.setState({ imgBtnClicked: !this.state.imgBtnClicked });
-                if (this.state.slide3) {
+                this.props.setSlide3(!this.props.slide3);
+                this.props.setImgBtnClicked(!this.props.imgBtnClicked);
+                if (this.props.slide3) {
                     this.stopRotate();
                 }
-                if (!this.state.imgBtnClicked) {
-                    this.setState({ move: "moveImg1" });
+                if (!this.props.imgBtnClicked) {
+                    this.props.setMove("moveImg1");
                 }
                 else {
-                    this.setState({ move: "moveImg2" });
+                    this.props.setMove("moveImg2");
                 }
             }
     }
 
 
     startRotate() {
-        if (!this.state.imgBtnClicked) {
-            this.setState({ spin: "spinImg " });
+        if (!this.props.imgBtnClicked) {
+            this.props.setSpin("spinImg ");
         }
     }
 
     stopRotate() {
-        if (!this.state.imgBtnClicked) {
-            this.setState({ spin: "" });
-            this.setState({ move: "" });
+        if (!this.props.imgBtnClicked) {
+            this.props.setSpin("");
+            this.props.setMove("");
         }
     }
 
 
     showAnswer() {
-        this.setState({ answer: !this.state.answer });
+        this.props.setAnswer1(!this.props.answer1);
     }
 
 
@@ -84,7 +94,7 @@ class Induction extends Component {
 
                         <button className="btn btn-link content1Btn" id="arr1" onClick={() => this.openContent('slide1')}>רקע</button>
 
-                        <SlideDown closed={this.state.slide1} className="my-dropdown-slidedown1">
+                        <SlideDown closed={this.props.slide1} className="my-dropdown-slidedown1">
 
                             <div className="content1">
 
@@ -107,7 +117,7 @@ class Induction extends Component {
                         <br /><br />
                         <button className="btn btn-link content2Btn" id="arr2" onClick={() => this.openContent('slide2')}>אינדוקציה של סדרות</button>
 
-                        <SlideDown closed={this.state.slide2} className="my-dropdown-slidedown2">
+                        <SlideDown closed={this.props.slide2} className="my-dropdown-slidedown2">
 
                             <div className="content2">
 
@@ -206,14 +216,14 @@ class Induction extends Component {
                                 </div>
                                 <br />
                                 <button className="btn btn-link understandBtn" onClick={() => this.openContent('slide3')} onMouseEnter={this.startRotate} onMouseLeave={this.stopRotate}><strong>בדיקת הבנה</strong></button>
-                                <img src={require("../../img/understand5.jpg")} alt="no image" className={"understandImg " + this.state.spin + this.state.move} />
+                                <img src={require("../../img/understand5.jpg")} alt="no image" className={"understandImg " + this.props.spin + this.props.move} />
                                 <div style={{ height: 20 }}></div>
-                                <SlideDown closed={this.state.slide3} className="questions my-dropdown-slidedown3">
+                                <SlideDown closed={this.props.slide3} className="questions my-dropdown-slidedown3">
 
                                     <p>הוכיחו על ידי אינדוקציה מתמטית כי לכל n טבעי מתקיים: <span style={{ marginRight: 10 }} dir="ltr">4+9+14+...+(5n-1) = <sup>1</sup>&frasl;<sub>2</sub>(5n<sup>2</sup>+3n)</span> </p>
 
                                     <button className="btn btn-link answer1Btn" onClick={() => this.showAnswer('answer')}>תשובה:</button>
-                                    <SlideDown closed={!this.state.answer} className="my-dropdown-slidedown3">
+                                    <SlideDown closed={!this.props.answer1} className="my-dropdown-slidedown3">
                                         <div className="answer1">
                                             <ol>
                                                 <li>

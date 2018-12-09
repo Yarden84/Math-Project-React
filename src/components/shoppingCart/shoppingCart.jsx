@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './shoppingCart.css';
 
+import { BrowserRouter, Link } from 'react-router-dom';
+
 import InequationItem from './items/inequationItem';
 import WordProblemsItem from './items/wordProblemsItem';
 import InductionItem from './items/inductionItem';
@@ -10,49 +12,47 @@ import TrigItem from './items/trigItem';
 
 
 class ShoppingCart extends Component {
-    state = {
-        subjects: [
-            { name: 'inequation', status: localStorage.getItem('inequation'), price: 10, num: 0 },
-            { name: 'wordProblems', status: localStorage.getItem('wordProblems'), price: 10, num: 0 },
-            { name: 'induction', status: localStorage.getItem('induction'), price: 10, num: 0 },
-            { name: 'calculus', status: localStorage.getItem('calculus'), price: 15, num: 0 },
-            { name: 'trig', status: localStorage.getItem('trig'), price: 15, num: 0 }
-        ],
-        priceSum: 0
-    }
 
     constructor(props) {
         super(props);
         this.itemCount = this.itemCount.bind(this);
         this.itemRemove = this.itemRemove.bind(this);
+
+        this.props.setItemStatus('inequation', localStorage.getItem('inequation'));
+        this.props.setItemStatus('wordProblems', localStorage.getItem('wordProblems'));
+        this.props.setItemStatus('induction', localStorage.getItem('induction'));
+        this.props.setItemStatus('calculus', localStorage.getItem('calculus'));
+        this.props.setItemStatus('trig', localStorage.getItem('trig'));
+
     }
 
-    componentDidMount() {
-        this.setState({ priceSum: 0 });
-        let priceSum = this.state.priceSum;
 
-        for (let i = 0; i < this.state.subjects.length; i++) {
-            if (this.state.subjects[i].status === 'true') {
-                priceSum += this.state.subjects[i].price;
+    componentDidMount() {
+        let subjectStatus = [localStorage.getItem('inequation'), localStorage.getItem('wordProblems'), localStorage.getItem('induction'), localStorage.getItem('calculus'), localStorage.getItem('trig')];
+
+        let priceSum = this.props.priceSum;
+
+        for (let i = 0; i < subjectStatus.length; i++) {
+            if (subjectStatus[i] === 'true') {
+                priceSum += this.props.subjects[i].price;
+                console.log("componentDidMount priceSum = ", priceSum);
             }
         }
 
-        this.setState({ priceSum });
-        this.itemCount();
+        this.props.setPriceSum(priceSum);
+        this.itemCount(subjectStatus);
     }
 
-    itemCount() {
-        let subject = this.state.subjects.slice();
+
+    itemCount(subjectStatus) {
         let itemNum = 1;
 
-        for (let i = 0; i < this.state.subjects.length; i++) {
-            if (this.state.subjects[i].status === 'true') {
-                subject[i].num = itemNum;
+        for (let i = 0; i < subjectStatus.length; i++) {
+            if (subjectStatus[i] === 'true') {
+                this.props.setItemNum(this.props.subjects[i].name, itemNum);
                 itemNum++;
             }
         }
-
-        this.setState({ subjects: subject });
     }
 
 
@@ -61,14 +61,13 @@ class ShoppingCart extends Component {
 
         localStorage.setItem(item, false);
         let stop = false;
-        let subject = this.state.subjects.slice();
 
-        for (let i = 0; i <= this.state.subjects.length && !stop; i++) {
-            if (this.state.subjects[i].name === item) {
-                subject[i].status = localStorage.getItem(item);
-                this.setState({ subjects: subject });
-                this.setState({ priceSum: this.state.priceSum - subject[i].price });
-                this.itemCount();
+        for (let i = 0; i <= this.props.subjects.length && !stop; i++) {
+            if (this.props.subjects[i].name === item) {
+                this.props.setItemStatus(this.props.subjects[i].name, localStorage.getItem(item));
+                this.props.setPriceSum(this.props.priceSum - this.props.subjects[i].price);
+                let subjectStatus = [localStorage.getItem('inequation'), localStorage.getItem('wordProblems'), localStorage.getItem('induction'), localStorage.getItem('calculus'), localStorage.getItem('trig')];
+                this.itemCount(subjectStatus);
                 this.props.badgeNum();
                 stop = true;
             }
@@ -80,36 +79,41 @@ class ShoppingCart extends Component {
 
     render() {
         return (
-            <div class="container SCContent">
-                <table class="table" dir="rtl">
-                    <thead>
-                        <tr>
-                            <th class="text-center" scope="col">#</th>
-                            <th class="text-center" scope="col">פריט</th>
-                            <th class="text-center" scope="col">מחיר</th>
-                        </tr>
-                    </thead>
-                    <tbody class="itemRows">
+            <BrowserRouter>
+                <div class="container SCContent">
+                    {console.log("this.props.subjects = ", this.props.subjects)}
+                    {console.log("this.props.subjects[2].status = ", this.props.subjects[2].status)}
+                    {console.log("this.props.priceSum = ", this.props.priceSum)}
+                    <table class="table" dir="rtl">
+                        <thead>
+                            <tr>
+                                <th class="text-center" scope="col">#</th>
+                                <th class="text-center" scope="col">פריט</th>
+                                <th class="text-center" scope="col">מחיר</th>
+                            </tr>
+                        </thead>
+                        <tbody class="itemRows">
 
-                        {this.state.subjects[0].status === 'true' ? <InequationItem price={this.state.subjects[0].price} num={this.state.subjects[0].num} itemRemove={this.itemRemove} /> : null}
-                        {this.state.subjects[1].status === 'true' ? <WordProblemsItem price={this.state.subjects[1].price} num={this.state.subjects[1].num} itemRemove={this.itemRemove} /> : null}
-                        {this.state.subjects[2].status === 'true' ? <InductionItem price={this.state.subjects[2].price} num={this.state.subjects[2].num} itemRemove={this.itemRemove} /> : null}
-                        {this.state.subjects[3].status === 'true' ? <CalculusItem price={this.state.subjects[3].price} num={this.state.subjects[3].num} itemRemove={this.itemRemove} /> : null}
-                        {this.state.subjects[4].status === 'true' ? <TrigItem price={this.state.subjects[4].price} num={this.state.subjects[4].num} itemRemove={this.itemRemove} /> : null}
+                            {this.props.subjects[0].status === 'true' ? <InequationItem price={this.props.subjects[0].price} num={this.props.subjects[0].num} itemRemove={this.itemRemove} /> : null}
+                            {this.props.subjects[1].status === 'true' ? <WordProblemsItem price={this.props.subjects[1].price} num={this.props.subjects[1].num} itemRemove={this.itemRemove} /> : null}
+                            {this.props.subjects[2].status === 'true' ? <InductionItem price={this.props.subjects[2].price} num={this.props.subjects[2].num} itemRemove={this.itemRemove} /> : null}
+                            {this.props.subjects[3].status === 'true' ? <CalculusItem price={this.props.subjects[3].price} num={this.props.subjects[3].num} itemRemove={this.itemRemove} /> : null}
+                            {this.props.subjects[4].status === 'true' ? <TrigItem price={this.props.subjects[4].price} num={this.props.subjects[4].num} itemRemove={this.itemRemove} /> : null}
 
-                        <tr>
-                            <th class="text-center" scope="row"></th>
-                            <td class="text-center"></td>
-                            <td class="text-center"><strong>סה"כ:  &ensp;&ensp;<span class="itemTotal">{this.state.priceSum}&ensp;</span>ש"ח</strong></td>
-                        </tr>
+                            <tr>
+                                <th class="text-center" scope="row"></th>
+                                <td class="text-center"></td>
+                                <td class="text-center"><strong>סה"כ:  &ensp;&ensp;<span class="itemTotal">{this.props.priceSum}&ensp;</span>ש"ח</strong></td>
+                            </tr>
 
 
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
 
-                <button class="btn btn-warning float-left" id="paymentBtn">לתשלום</button>
+                    <Link to="/payment" target="_parent" class="btn btn-warning float-left" id="paymentBtn">לתשלום</Link>
 
-            </div>
+                </div>
+            </BrowserRouter>
         );
     }
 }

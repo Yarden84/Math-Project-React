@@ -10,7 +10,7 @@ library.add(faCopyright);
 
 
 class Footer extends Component {
-    state = {}
+
     render() {
         return (
 

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 class InequationItem extends Component {
-    state = {}
 
     render() {
         return (

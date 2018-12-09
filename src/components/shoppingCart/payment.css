@@ -1,0 +1,14 @@
+.payment {
+    min-height: 100vh;
+    padding-top: 50px;
+    background-image: url("../../img/underConstruction3.jpg");
+    background-repeat: no-repeat;
+    /* background-size: 800px;*/
+    background-position-x: 100px;
+    background-position-y: -20px;
+  }
+  
+  .payment h4 {
+    position: relative;
+    top: 430px;
+  }

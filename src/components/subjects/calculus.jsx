@@ -13,60 +13,72 @@ import { faCartArrowDown } from '@fortawesome/free-solid-svg-icons';
 library.add(faCartArrowDown);
 
 class Calculus extends Component {
-    state = {
-        slide1: true,
-        slide2: true,
-        slide3: true,
-        answer1: false,
-        answer2: false,
-        answer3: false,
-        answer4: false,
-        spin: "",
-        move: "",
-        imgBtnClicked: false
-    }
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
+
         this.openContent = this.openContent.bind(this);
         this.startRotate = this.startRotate.bind(this);
         this.stopRotate = this.stopRotate.bind(this);
+
+        this.props.setSlide1(true);
+        this.props.setSlide2(true);
+        this.props.setSlide3(true);
+        this.props.setAnswer1(false);
+        this.props.setAnswer2(false);
+        this.props.setAnswer3(false);
+        this.props.setAnswer4(false);
+        this.props.setSpin("");
+        this.props.setMove("");
+        this.props.setImgBtnClicked(false);
+
+
+        if (localStorage.getItem('slide1') == 'false') {
+            this.props.setSlide1(false);
+            localStorage.setItem('slide1', 'true');
+        }
+        if (localStorage.getItem('slide2') == 'false') {
+            this.props.setSlide2(false);
+            localStorage.setItem('slide2', 'true');
+        }
+
     }
+
 
     openContent(x) {
         if (x === 'slide1') {
-            this.setState({ slide1: !this.state.slide1 });
+            this.props.setSlide1(!this.props.slide1);
         }
         else
             if (x === 'slide2') {
-                this.setState({ slide2: !this.state.slide2 });
+                this.props.setSlide2(!this.props.slide2);
             }
             else {
-                this.setState({ slide3: !this.state.slide3 });
-                this.setState({ imgBtnClicked: !this.state.imgBtnClicked });
-                if (this.state.slide3) {
+                this.props.setSlide3(!this.props.slide3);
+                this.props.setImgBtnClicked(!this.props.imgBtnClicked);
+                if (this.props.slide3) {
                     this.stopRotate();
                 }
-                if (!this.state.imgBtnClicked) {
-                    this.setState({ move: "moveImg1" });
+                if (!this.props.imgBtnClicked) {
+                    this.props.setMove("moveImg1");
                 }
                 else {
-                    this.setState({ move: "moveImg2" });
+                    this.props.setMove("moveImg2");
                 }
             }
     }
 
 
     startRotate() {
-        if (!this.state.imgBtnClicked) {
-            this.setState({ spin: "spinImg " });
+        if (!this.props.imgBtnClicked) {
+            this.props.setSpin("spinImg ");
         }
     }
 
     stopRotate() {
-        if (!this.state.imgBtnClicked) {
-            this.setState({ spin: "" });
-            this.setState({ move: "" });
+        if (!this.props.imgBtnClicked) {
+            this.props.setSpin("");
+            this.props.setMove("");
         }
     }
 
@@ -74,16 +86,16 @@ class Calculus extends Component {
     showAnswer(answer) {
         switch (answer) {
             case 'answer1':
-                this.setState({ answer1: !this.state.answer1 });
+                this.props.setAnswer1(!this.props.answer1);
                 break;
             case 'answer2':
-                this.setState({ answer2: !this.state.answer2 });
+                this.props.setAnswer2(!this.props.answer2);
                 break;
             case 'answer3':
-                this.setState({ answer3: !this.state.answer3 });
+                this.props.setAnswer3(!this.props.answer3);
                 break;
             case 'answer4':
-                this.setState({ answer4: !this.state.answer4 });
+                this.props.setAnswer4(!this.props.answer4);
                 break;
         }
     }
@@ -104,7 +116,7 @@ class Calculus extends Component {
 
                         <button className="btn btn-link content1Btn" id="arr2" onClick={() => this.openContent('slide1')}>רקע</button>
 
-                        <SlideDown closed={this.state.slide1} className="my-dropdown-slidedown1">
+                        <SlideDown closed={this.props.slide1} className="my-dropdown-slidedown1">
 
                             <div className="content1">
 
@@ -128,7 +140,7 @@ class Calculus extends Component {
                         <br /><br />
                         <button className="btn btn-link content2Btn" id="arr3" onClick={() => this.openContent('slide2')}>פונקציות-חזרה</button>
 
-                        <SlideDown closed={this.state.slide2} className="my-dropdown-slidedown2">
+                        <SlideDown closed={this.props.slide2} className="my-dropdown-slidedown2">
 
                             <div className="content2">
 
@@ -154,9 +166,9 @@ class Calculus extends Component {
                                 <p></p>
 
                                 <button className="btn btn-link understandBtn" onClick={() => this.openContent('slide3')} onMouseEnter={this.startRotate} onMouseLeave={this.stopRotate}><strong>בדיקת הבנה</strong></button>
-                                <img src={require("../../img/understand5.jpg")} alt="no image" className={"understandImg " + this.state.spin + this.state.move} />
+                                <img src={require("../../img/understand5.jpg")} alt="no image" className={"understandImg " + this.props.spin + this.props.move} />
                                 <div style={{ height: "10px" }}></div>
-                                <SlideDown closed={this.state.slide3} className="questions my-dropdown-slidedown3">
+                                <SlideDown closed={this.props.slide3} className="questions my-dropdown-slidedown3">
 
                                     <ol>
                                         <li>
@@ -164,7 +176,7 @@ class Calculus extends Component {
                                             <p>א. חשבו את שיפוע הישר המשורטט.   </p>
                                             <button className="btn btn-link answer1Btn" onClick={() => this.showAnswer('answer1')}>תשובה:</button>
 
-                                            <Animate show={this.state.answer1} start={{ opacity: 0 }} style={{
+                                            <Animate show={this.props.answer1} start={{ opacity: 0 }} style={{
                                                 display: "inline"
                                             }}>
                                                 <p className="answer1">m=-4.5</p>
@@ -173,7 +185,7 @@ class Calculus extends Component {
                                             <p>ב. רשמו את משוואת הישר הנתון.</p>
                                             <button className="btn btn-link answer2Btn" onClick={() => this.showAnswer('answer2')}>תשובה:</button>
 
-                                            <Animate show={this.state.answer2} start={{ opacity: 0 }} style={{ display: "inline" }}>
+                                            <Animate show={this.props.answer2} start={{ opacity: 0 }} style={{ display: "inline" }}>
                                                 <p className="answer2">y=-4.5x+8.5</p>
                                             </Animate>
 
@@ -182,7 +194,7 @@ class Calculus extends Component {
                                             </p>
 
                                             <button className="btn btn-link answer3Btn" onClick={() => this.showAnswer('answer3')}>תשובה:</button>
-                                            <Animate show={this.state.answer3} start={{ opacity: 0 }} style={{ display: "inline" }}>
+                                            <Animate show={this.props.answer3} start={{ opacity: 0 }} style={{ display: "inline" }}>
                                                 <p className="answer3">מתחת לישר</p>
                                             </Animate>
 
@@ -191,7 +203,7 @@ class Calculus extends Component {
                                             <p>רשמו את משוואת הישר העובר בנקודות: <strong>f(2)=1 f(0)=-5</strong></p>
                                             <button className="btn btn-link answer4Btn" onClick={() => this.showAnswer('answer4')}>תשובה:</button>
 
-                                            <Animate show={this.state.answer4} start={{ opacity: 0 }} style={{ display: "inline" }}>
+                                            <Animate show={this.props.answer4} start={{ opacity: 0 }} style={{ display: "inline" }}>
                                                 <p className="answer4">y=3x-5</p>
                                             </Animate>
 

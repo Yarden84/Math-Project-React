@@ -15,63 +15,73 @@ library.add(faCartArrowDown);
 class Inequation extends Component {
     state = {
         greaterThan: ">",
-        lessThan: "<",
-        slide1: true,
-        slide2: true,
-        answer1: false,
-        answer2: false,
-        spin: "",
-        move: "",
-        imgBtnClicked: false
+        lessThan: "<"
     }
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.openContent = this.openContent.bind(this);
         this.startRotate = this.startRotate.bind(this);
         this.stopRotate = this.stopRotate.bind(this);
+
+        this.props.setSlide1(true);
+        this.props.setSlide2(true);
+        this.props.setAnswer1(false);
+        this.props.setAnswer2(false);
+        this.props.setSpin("");
+        this.props.setMove("");
+        this.props.setImgBtnClicked(false);
+
+        if (localStorage.getItem('slide1') == 'false') {
+            this.props.setSlide1(false);
+            localStorage.setItem('slide1', 'true');
+        }
+        if (localStorage.getItem('slide2') == 'false') {
+            this.props.setSlide2(false);
+            localStorage.setItem('slide2', 'true');
+        }
     }
 
     openContent(x) {
         if (x === 'slide1') {
-            this.setState({ slide1: !this.state.slide1 });
+            this.props.setSlide1(!this.props.slide1);
         }
         else {
-            this.setState({ slide2: !this.state.slide2 });
-            this.setState({ imgBtnClicked: !this.state.imgBtnClicked });
-            if (this.state.slide2) {
+            this.props.setSlide2(!this.props.slide2);
+            this.props.setImgBtnClicked(!this.props.imgBtnClicked);
+            if (this.props.slide2) {
                 this.stopRotate();
             }
-            if (!this.state.imgBtnClicked) {
-                this.setState({ move: "moveImg1" });
+            if (!this.props.imgBtnClicked) {
+                this.props.setMove("moveImg1");
             }
             else {
-                this.setState({ move: "moveImg2" });
+                this.props.setMove("moveImg2");
             }
         }
     }
 
 
     startRotate() {
-        if (!this.state.imgBtnClicked) {
-            this.setState({ spin: "spinImg " });
+        if (!this.props.imgBtnClicked) {
+            this.props.setSpin("spinImg ");
         }
     }
 
     stopRotate() {
-        if (!this.state.imgBtnClicked) {
-            this.setState({ spin: "" });
-            this.setState({ move: "" });
+        if (!this.props.imgBtnClicked) {
+            this.props.setSpin("");
+            this.props.setMove("");
         }
     }
 
 
     showAnswer(x) {
         if (x === 'answer1') {
-            this.setState({ answer1: !this.state.answer1 });
+            this.props.setAnswer1(!this.props.answer1);
         }
         else {
-            this.setState({ answer2: !this.state.answer2 });
+            this.props.setAnswer2(!this.props.answer2);
         }
     }
 
@@ -88,7 +98,7 @@ class Inequation extends Component {
                         <br /><br />
 
                         <button className="btn btn-link content1Btn" id="arr1" onClick={() => this.openContent('slide1')}>חזרה ותזכורת</button>
-                        <SlideDown closed={this.state.slide1} className="my-dropdown-slidedown1">
+                        <SlideDown closed={this.props.slide1} className="my-dropdown-slidedown1">
                             <div className="content1">
                                 <p>בטרם נעסוק באי שוויון עם ערך מוחלט, נערוך תזכורת קצרה לטכניקות של אי שוויונות בכלל. (מי שאמון על טכניקות אלה יכול לעבור מיד לנושא עצמו).</p>
                                 <p>פתרון אי שוויון לינארי:</p>
@@ -115,21 +125,21 @@ class Inequation extends Component {
 
 
                                 <button className="btn btn-link understandBtn" onClick={() => this.openContent('slide2')} onMouseEnter={this.startRotate} onMouseLeave={this.stopRotate}><strong>בדיקת הבנה</strong></button>
-                                <img src={require("../../img/understand5.jpg")} alt="no image" className={"understandImg " + this.state.spin + this.state.move} />
-                                <SlideDown closed={this.state.slide2} className="questions my-dropdown-slidedown2">
+                                <img src={require("../../img/understand5.jpg")} alt="no image" className={"understandImg " + this.props.spin + this.props.move} />
+                                <SlideDown closed={this.props.slide2} className="questions my-dropdown-slidedown2">
                                     <h6>פתרו את אי השוויונות הבאים:</h6>
                                     <ol>
                                         <li>
                                             <p dir="ltr">2x-5{this.state.lessThan}4(3x-1) <span style={{ paddingRight: 7, paddingLeft: 7 }}> או </span>  2(x+8)+7(x-1){this.state.greaterThan}5   </p>
                                             <button className="btn btn-link answer1Btn" onClick={() => this.showAnswer('answer1')}>תשובה:</button>
-                                            <Animate show={this.state.answer1} start={{ opacity: 0 }} style={{ display: "inline" }}>
+                                            <Animate show={this.props.answer1} start={{ opacity: 0 }} style={{ display: "inline" }}>
                                                 <p className="answer1">x>-<sup>4</sup>&frasl;<sub>9</sub></p>
                                             </Animate>
                                         </li>
                                         <li>
                                             <p>x-2{this.state.lessThan}3(2x+5)-9{this.state.lessThan}19  </p>
                                             <button className="btn btn-link answer2Btn" onClick={() => this.showAnswer('answer2')}>תשובה:</button>
-                                            <Animate show={this.state.answer2} start={{ opacity: 0 }} style={{ display: "inline" }}>
+                                            <Animate show={this.props.answer2} start={{ opacity: 0 }} style={{ display: "inline" }}>
                                                 <p className="answer2" dir="ltr">-<sup>8</sup>&frasl;<sub>5</sub> {this.state.lessThan} x {this.state.lessThan} <sup>13</sup>&frasl;<sub>6</sub></p>
                                             </Animate>
                                         </li>

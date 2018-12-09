@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 class TrigItem extends Component {
-    state = {}
+
     render() {
         return (
             <tr className="trigRow">
