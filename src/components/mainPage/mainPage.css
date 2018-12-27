@@ -1,5 +1,5 @@
 #coverImg {
-    min-height: 500px;
+    height: 500px;
     background-image: url("../../img/math6.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -87,7 +87,7 @@
 
   @media only screen and (max-width: 1040px) {
     #coverImg {
-      min-height: 320px;
+      height: 320px;
       background-position-y: -40px;
       overflow-x: hidden;
       position: relative;
