@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './inequation.css';
+import './subjects.css';
 
 import { SlideDown } from 'react-slidedown';
 import 'react-slidedown/lib/slidedown.css';
@@ -91,75 +92,137 @@ class Inequation extends Component {
         return (
             <BrowserRouter>
                 <div className="bg">
-                    <div className="container text-right content" dir="rtl">
+                    <div className="container text-right subjectContent" dir="rtl">
 
                         <h1 className="text-center" id="arr0">אי שוויון עם ערך מוחלט</h1>
 
                         <br /><br />
 
-                        <button className="btn btn-link content1Btn" id="arr1" onClick={() => this.openContent('slide1')}>חזרה ותזכורת</button>
-                        <SlideDown closed={this.props.slide1} className="my-dropdown-slidedown1">
-                            <div className="content1">
-                                <p>בטרם נעסוק באי שוויון עם ערך מוחלט, נערוך תזכורת קצרה לטכניקות של אי שוויונות בכלל. (מי שאמון על טכניקות אלה יכול לעבור מיד לנושא עצמו).</p>
-                                <p>פתרון אי שוויון לינארי:</p>
-                                <p><pre>נפתור את אי השוויון:          1-4x{this.state.lessThan}5</pre></p>
-                                <p><pre>תחילה נעביר אגפים:           4x{this.state.lessThan}4-</pre></p>
-                                <p><pre>נחלק במקדם:                      x>-1           (הכפלה או חילוק במספר שלילי הופכים את הסימן!)</pre></p>
-                                <br />
-                                <p><pre>פתרון מערכת "או":   4x-3 > 7x+12          או        7x {this.state.lessThan} 2x-10</pre></p>
-                                <p><pre>                                       5x{this.state.lessThan}-10                             -3x{this.state.greaterThan}15</pre></p>
-                                <p><pre>                                        x{this.state.greaterThan}-2                                  x{this.state.lessThan}-5</pre></p>
 
-                                <p>הצגת הפתרונות:</p>
-                                <img src={require("../../img/inequation1.jpg")} alt="no image 1" id="img1" />
-                                <p>והתשובה הסופית:  x{this.state.lessThan}-2</p>
+                        <div class="accordion" id="accordion">
+                            <div class="card">
+                                <div class="card-header" id="headingOne">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            חזרה ותזכורת
+                                    </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseOne" class={this.props.slide1 == false ? "collapse show" : "collapse"} aria-labelledby="headingOne" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <div className="subjectContent1">
+                                            <p>בטרם נעסוק באי שוויון עם ערך מוחלט, נערוך תזכורת קצרה לטכניקות של אי שוויונות בכלל. (מי שאמון על טכניקות אלה יכול לעבור מיד לנושא עצמו).</p>
+                                            <p>פתרון אי שוויון לינארי:</p>
+                                            <p><pre>נפתור את אי השוויון:          1-4x{this.state.lessThan}5</pre></p>
+                                            <p><pre>תחילה נעביר אגפים:           4x{this.state.lessThan}4-</pre></p>
+                                            <p><pre>נחלק במקדם:                      x>-1           (הכפלה או חילוק במספר שלילי הופכים את הסימן!)</pre></p>
+                                            <br />
 
-                                <br /><br />
+                                            <div style={{ display: "block" }}>
+                                                <p style={{ display: "inline-block" }}>פתרון מערכת "או":</p>
+                                                <table id="inequationTable">
+                                                    <tr className="text-center">
+                                                        <td className="text-center">4x-3 {this.state.greaterThan} 7x+12 </td>
+                                                        <td className="text-center">או</td>
+                                                        <td className="text-center">7x {this.state.lessThan} 2x-10</td>
+                                                    </tr>
+                                                    <tr className="text-center">
+                                                        <td className="text-center">3x {this.state.greaterThan}  15-</td>
+                                                        <td className="text-center"></td>
+                                                        <td className="text-center">5x {this.state.lessThan} -10</td>
+                                                    </tr>
+                                                    <tr className="text-center">
+                                                        <td className="text-center">x {this.state.lessThan} -5</td>
+                                                        <td className="text-center"></td>
+                                                        <td className="text-center">x {this.state.greaterThan} -2</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
 
-                                <p><pre>פתרון מערכת "וגם":                        5x+7{this.state.lessThan}6x+3{this.state.lessThan}15</pre></p>
-                                <p><pre>פירוק אי השוויונות:        6x+3{this.state.lessThan}15         וגם          5x+7{this.state.lessThan}6x+3</pre></p>
-                                <p><pre>                                     x{this.state.lessThan}-4                                 6x{this.state.lessThan}12-</pre></p>
-                                <p><pre>                                       x{this.state.greaterThan}4                                    x{this.state.lessThan}2</pre></p>
-                                <img src={require("../../img/inequation2.jpg")} alt="no image 2" id="img2" />
-                                <p>והפתרון:  x=&Oslash;</p>
+                                            <p>הצגת הפתרונות:</p>
+                                            <img src={require("../../img/inequation1.png")} alt="no image 1" id="inequationImg1" />
+
+                                            <p>והתשובה הסופית:  x{this.state.lessThan}-2</p>
+
+                                            <br /><br />
+
+                                            <p><pre>פתרון מערכת "וגם":                        5x+7{this.state.lessThan}6x+3{this.state.lessThan}15</pre></p>
+                                            <p><pre>פירוק אי השוויונות:        6x+3{this.state.lessThan}15         וגם          5x+7{this.state.lessThan}6x+3</pre></p>
+                                            <p><pre>                                     x{this.state.lessThan}-4                                 6x{this.state.lessThan}12-</pre></p>
+                                            <p><pre>                                       x{this.state.greaterThan}4                                    x{this.state.lessThan}2</pre></p>
+                                            <img src={require("../../img/inequation2.png")} alt="no image 2" id="inequationImg2" />
+                                            <p>והפתרון:  x=&Oslash;</p>
 
 
-                                <button className="btn btn-link understandBtn" onClick={() => this.openContent('slide2')} onMouseEnter={this.startRotate} onMouseLeave={this.stopRotate}><strong>בדיקת הבנה</strong></button>
-                                <img src={require("../../img/understand5.jpg")} alt="no image" className={"understandImg " + this.props.spin + this.props.move} />
-                                <SlideDown closed={this.props.slide2} className="questions my-dropdown-slidedown2">
-                                    <h6>פתרו את אי השוויונות הבאים:</h6>
-                                    <ol>
-                                        <li>
-                                            <p dir="ltr">2x-5{this.state.lessThan}4(3x-1) <span style={{ paddingRight: 7, paddingLeft: 7 }}> או </span>  2(x+8)+7(x-1){this.state.greaterThan}5   </p>
-                                            <button className="btn btn-link answer1Btn" onClick={() => this.showAnswer('answer1')}>תשובה:</button>
-                                            <Animate show={this.props.answer1} start={{ opacity: 0 }} style={{ display: "inline" }}>
-                                                <p className="answer1">x>-<sup>4</sup>&frasl;<sub>9</sub></p>
-                                            </Animate>
-                                        </li>
-                                        <li>
-                                            <p>x-2{this.state.lessThan}3(2x+5)-9{this.state.lessThan}19  </p>
-                                            <button className="btn btn-link answer2Btn" onClick={() => this.showAnswer('answer2')}>תשובה:</button>
-                                            <Animate show={this.props.answer2} start={{ opacity: 0 }} style={{ display: "inline" }}>
-                                                <p className="answer2" dir="ltr">-<sup>8</sup>&frasl;<sub>5</sub> {this.state.lessThan} x {this.state.lessThan} <sup>13</sup>&frasl;<sub>6</sub></p>
-                                            </Animate>
-                                        </li>
-                                    </ol>
+                                            <button className="btn btn-link understandBtn" onClick={() => this.openContent('slide2')} onMouseEnter={this.startRotate} onMouseLeave={this.stopRotate}><strong>בדיקת הבנה</strong></button>
+                                            <img src={require("../../img/understand5.jpg")} alt="no image" className={"understandImg " + this.props.spin + this.props.move} />
+                                            <SlideDown closed={this.props.slide2} className="questions my-dropdown-slidedown2">
+                                                <h6>פתרו את אי השוויונות הבאים:</h6>
+                                                <ol>
+                                                    <li>
+                                                        <p className="ineQ" dir="ltr">2x-5{this.state.lessThan}4(3x-1) <span style={{ paddingRight: 7, paddingLeft: 7 }}> או </span>  2(x+8)+7(x-1){this.state.greaterThan}5   </p>
+                                                        <button className="btn btn-link answer1Btn" onClick={() => this.showAnswer('answer1')}>תשובה:</button>
+                                                        <Animate show={this.props.answer1} start={{ opacity: 0 }} style={{ display: "inline" }}>
+                                                            <p className="answer1">x>-<sup>4</sup>&frasl;<sub>9</sub></p>
+                                                        </Animate>
+                                                    </li>
+                                                    <li>
+                                                        <p className="ineQ">x-2{this.state.lessThan}3(2x+5)-9{this.state.lessThan}19  </p>
+                                                        <button className="btn btn-link answer2Btn" onClick={() => this.showAnswer('answer2')}>תשובה:</button>
+                                                        <Animate show={this.props.answer2} start={{ opacity: 0 }} style={{ display: "inline" }}>
+                                                            <p className="answer2" dir="ltr">-<sup>8</sup>&frasl;<sub>5</sub> {this.state.lessThan} x {this.state.lessThan} <sup>13</sup>&frasl;<sub>6</sub></p>
+                                                        </Animate>
+                                                    </li>
+                                                </ol>
 
-                                </SlideDown>
+                                            </SlideDown>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </SlideDown>
 
-                        <br /><br />
-                        <button className="btn btn-link content2Btn" id="arr2" disabled>אי שוויון עם ערך מוחלט</button>
+                            <div class="card">
+                                <div class="card-header" id="headingTwo">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed disabled" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            אי שוויון עם ערך מוחלט
+                                    </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                    <div class="card-body">
 
-                        <br /><br />
-                        <button className="btn btn-link content3Btn" id="arr3" disabled>אי שיוויון עם רב איבר בערך מוחלט</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingThree">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed disabled" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            אי שיוויון עם רב איבר בערך מוחלט
+                                    </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                    <div class="card-body">
 
-                        <br /><br /><br /><br />
-                        <button className="btn btn-link inequationAllChaptersBtn" disabled>כל הפרקים המלאים</button>
-                        <Link to="/shoppingCart" target="_parent" className="shoppingCartLink" id="inequation">
-                            <button onClick={() => this.props.itemAdd('inequation')} className="btn btn-warning shoppingBtn inequation">הוסף לעגלת קניות<FontAwesomeIcon icon={faCartArrowDown} size="1x" style={{ marginRight: "5px" }} /></button>
-                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div className="buyItem">
+                            <p>לרכישת הפרק המלא:</p>
+                            <Link to="/shoppingCart" target="_parent" className="shoppingCartLink">
+                                <button onClick={() => this.props.itemAdd('inequation')} className="btn btn-warning shoppingBtn">הוסף לעגלת קניות<FontAwesomeIcon icon={faCartArrowDown} size="1x" style={{ marginRight: "5px" }} /></button>
+                            </Link>
+                        </div>
+
+
+
+
                     </div>
                 </div>
             </BrowserRouter>

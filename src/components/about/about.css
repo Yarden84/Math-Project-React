@@ -11,7 +11,7 @@
     border-bottom: 1px solid #F2C389;
   }
   
-  .content {
+  .aboutContent {
     border-radius: 20px;
     -webkit-box-shadow: 2px 0 15px 0;
             box-shadow: 2px 0 15px 0;
@@ -24,95 +24,46 @@
     padding-right: 50px !important;
   }
   
-  .content .shoppingCart {
-    margin-right: 6px;
-  }
   
-  .content .shoppingCartLink {
-    color: inherit;
-    text-decoration: none;
-  }
-  
-  .content h1 {
+  .aboutContent h1 {
     font-family: hadasimclm;
     font-size: 45px;
   }
   
-  .content p {
+  .aboutContent p {
     margin-top: 15px;
   }
   
-  .content pre {
+  .aboutContent pre {
     font-family: inherit;
     font-size: inherit;
   }
   
-  .content .understandImg {
-    position: relative;
-    height: 80px;
-    margin-top: 20px;
-  }
-  
-  .content .understandBtn {
-    margin-right: 100px;
-  }
-  
-  .content .spinImg {
-    -webkit-animation: spin 1s linear infinite;
-            animation: spin 1s linear infinite;
-  }
-  
-  @-webkit-keyframes spin {
-    0% {
-      -webkit-transform: rotate(0deg);
-              transform: rotate(0deg);
-    }
-    25% {
-      -webkit-transform: rotate(20deg);
-              transform: rotate(20deg);
-    }
-    50% {
-      -webkit-transform: rotate(0deg);
-              transform: rotate(0deg);
-    }
-    75% {
-      -webkit-transform: rotate(-20deg);
-              transform: rotate(-20deg);
-    }
-  }
-  
-  @keyframes spin {
-    0% {
-      -webkit-transform: rotate(0deg);
-              transform: rotate(0deg);
-    }
-    25% {
-      -webkit-transform: rotate(20deg);
-              transform: rotate(20deg);
-    }
-    50% {
-      -webkit-transform: rotate(0deg);
-              transform: rotate(0deg);
-    }
-    75% {
-      -webkit-transform: rotate(-20deg);
-              transform: rotate(-20deg);
-    }
-  }
-  
-  .content .details {
+  .aboutContent .details {
     padding-right: 20px;
-    width: 800px;
+    width: 75%;
   }
   
-  .content table {
+  .aboutContent table {
     margin-right: 165px;
   }
-  
-  .content table tr:nth-child(7) td:nth-child(2) {
-    border-top: 1px solid black;
+
+  .aboutContent table tr td:nth-child(1){
+    padding-left: 30px;
   }
   
-  /*------------------------------------------------------------------------------------------------------*/
- 
-  /*# sourceMappingURL=about.css.map */
+  .aboutContent table tr:nth-child(7) td:nth-child(2) {
+    border-top: 1px solid black;
+  }
+
+
+  @media only screen and (max-width: 767px) {
+    .aboutContent .details {
+      width: 100%;
+    }
+
+    .aboutText{
+      position: relative;
+      bottom: 20px;
+    }
+  }

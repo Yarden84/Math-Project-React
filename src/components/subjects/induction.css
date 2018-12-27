@@ -1,149 +1,57 @@
-.bg {
-    background-color: #8FB5CB;
-    border-top: 1px solid #8FB5CB;
-    border-bottom: 1px solid #8FB5CB;
+  #ind1 {
+    display: inline-block;
+    margin-right: 174px;
+  }
+
+  #ind2 {
+    display: inline-block;
+    margin-right: 5px;
+  }
+
+  #ind3 {
+    display: inline-block;
+    margin-bottom: 15px;
+  }
+
+  #ind4 {
+    margin-right: 90px;
+  }
+
+  #ind5 {
+    margin-right: 196px;
+  }
+
+  #indLong2{
+    display: none;
+  }
+
+  #indTable{
+    overflow: hidden;
+  }
+
+  #indTable td:nth-child(2){
+    padding: 7px 270px;
   }
   
-  .content {
-    border-radius: 20px;
-    -webkit-box-shadow: 2px 0 15px 0;
-            box-shadow: 2px 0 15px 0;
-    background-color: white;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    padding: 50px 30px;
-    min-height: 500px;
-    /*img animations:*/
-    min-height: 100vh;
-    position: relative;
-  }
-  
-  .shoppingCart {
-    margin-right: 6px;
-  }
-  
-  .shoppingCartLink {
-    color: inherit;
-    text-decoration: none;
-  }
-  
-  h1 {
-    font-family: hadasimclm;
-    font-size: 45px;
-  }
-  
-  p {
-    margin-top: 15px;
-  }
-  
-  pre {
-    font-family: inherit;
-    font-size: inherit;
-  }
-  
-  .understandImg {
-    position: relative;
-    height: 80px;
-    margin-top: 20px;
-  }
-  
-  .understandBtn {
-    margin-right: 100px;
-  }
-  
-  .spinImg {
-    -webkit-animation: spin 1s linear infinite;
-            animation: spin 1s linear infinite;
-  }
-  
-  @-webkit-keyframes spin {
-    0% {
-      -webkit-transform: rotate(0deg);
-              transform: rotate(0deg);
-    }
-    25% {
-      -webkit-transform: rotate(20deg);
-              transform: rotate(20deg);
-    }
-    50% {
-      -webkit-transform: rotate(0deg);
-              transform: rotate(0deg);
-    }
-    75% {
-      -webkit-transform: rotate(-20deg);
-              transform: rotate(-20deg);
-    }
-  }
-  
-  @keyframes spin {
-    0% {
-      -webkit-transform: rotate(0deg);
-              transform: rotate(0deg);
-    }
-    25% {
-      -webkit-transform: rotate(20deg);
-              transform: rotate(20deg);
-    }
-    50% {
-      -webkit-transform: rotate(0deg);
-              transform: rotate(0deg);
-    }
-    75% {
-      -webkit-transform: rotate(-20deg);
-              transform: rotate(-20deg);
-    }
-  }
-  
-  .content .content1, .content .content2 {
-    padding: 0 50px;
-    margin: 0 30px;
-    border-right: 1px solid #A9A9A9;
-    border-left: 1px solid #A9A9A9;
-  }
-  
-  .content ol {
+  .subjectContent ol {
     margin-right: 30px;
   }
   
-  .content ul {
+  .subjectContent ul {
     list-style: none;
   }
   
-  .questions {
-    position: relative;
-    right: 100px;
-    bottom: 20px;
-    border-right: 3px solid black;
-    padding-right: 30px;
-  }
   
   #box {
-    margin-right: 100px;
+    /* margin-right: 100px; */
+    margin: auto;
     font-size: 14px;
     border: 1px solid black;
     width: 70%;
     padding: 10px 20px;
   }
+
   
-  .disabledBtn, .content1Btn, .content2Btn {
-    padding-right: 40px;
-  }
-  
-  /* .allChaptersBtn {
-    padding-bottom: 100px;
-  } */
-  
-  .inductionAllChaptersBtn {
-    margin-right: 380px;
-    position: absolute;
-    bottom: 70px;
-  }
-  
-  .shoppingBtn {
-    margin-right: 550px;
-    position: absolute;
-    bottom: 70px;
-  }
 
   .react-slidedown.my-dropdown-slidedown1 {
     transition-duration: 1s;
@@ -157,80 +65,55 @@
     transition-duration: 0.5s;
     overflow: hidden;
 }
-/*------------------------------------------------------------*/
-/*Animations:*/
 
-.spinImg {
-    -webkit-animation: spin 1s linear infinite;
-            animation: spin 1s linear infinite;
+
+
+@media only screen and (max-width: 1200px) {
+  #indTable td:nth-child(2){
+    padding: 7px 200px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  #indTable td:nth-child(2){
+    padding: 7px 70px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  #indTable td:nth-child(2){
+    padding: 7px 0px;
+    white-space: nowrap;
+  }
+  #indLong1{
+    display: none;
+  }
+  #indLong2{
+    display: initial;
+  }
+  #ind4 {
+    margin-right: 5px;
+  }
+  #ind5 {
+    margin-right: 5px;
+  }
+}
+
+@media only screen and (max-width: 535px) {
+  #ind1 {
+    margin-right: 100px;
+  }
+  #ind2 {
+    display: block;
+    position: relative;
+    left: 5px;
+    bottom: 12px;
+  }
+}
+
+@media only screen and (max-width: 521px) {
+  #indTable tr:nth-child(-n+2) td:nth-child(1){
+    padding-bottom: 20px;
   }
   
-  @-webkit-keyframes spin {
-    0% {
-      -webkit-transform: rotate(0deg);
-              transform: rotate(0deg);
-    }
-    25% {
-      -webkit-transform: rotate(20deg);
-              transform: rotate(20deg);
-    }
-    50% {
-      -webkit-transform: rotate(0deg);
-              transform: rotate(0deg);
-    }
-    75% {
-      -webkit-transform: rotate(-20deg);
-              transform: rotate(-20deg);
-    }
-  }
-  
-  @keyframes spin {
-    0% {
-      -webkit-transform: rotate(0deg);
-              transform: rotate(0deg);
-    }
-    25% {
-      -webkit-transform: rotate(20deg);
-              transform: rotate(20deg);
-    }
-    50% {
-      -webkit-transform: rotate(0deg);
-              transform: rotate(0deg);
-    }
-    75% {
-      -webkit-transform: rotate(-20deg);
-              transform: rotate(-20deg);
-    }
-  }
-
-.moveImg1{
-    position: relative;
-    -webkit-animation: moveImg1 0.4s linear forwards;
-            animation: moveImg1 0.4s linear forwards;
-}
-
-@-webkit-keyframes moveImg1 {
-    0%   {left:0px; top:0px;}
-    100% {left:230px; top:120px;}
-}
-
-@keyframes moveImg1 {
-    0%   {left:0px; top:0px;}
-    100% {left:230px; top:120px;}
-}
-
-.moveImg2{
-    position: relative;
-    -webkit-animation: moveImg2 0.4s linear forwards;
-            animation: moveImg2 0.4s linear forwards;
-}
-
-@-webkit-keyframes moveImg2 {
-    0%   {left:230px; top:120px;}
-    100% {left:0px; top:0px;}
-}
-
-@keyframes moveImg2 {
-    0%   {left:230px; top:120px;}
-    100% {left:0px; top:0px;}
 }

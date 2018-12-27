@@ -2,11 +2,16 @@
     min-height: 100vh;
     padding-top: 50px;
   }
+
+.itemPlacement{
+    display: inline-block;
+    width: 260px;
+    text-align: center;
+    margin-right: 130px;
+}
   
 .item {
     text-align: right;
-    position: relative;
-    right: 270px;
 }
   
 .removeBtn {
@@ -14,8 +19,18 @@
     left: 20px;
 }
 
+
 #paymentBtn {
     color: inherit;
     text-decoration: none;
     margin-bottom: 20px;
+}
+
+
+
+@media only screen and (max-width: 767px) {
+    .itemPlacement{
+        width: 230px;
+        margin-right: 90px;
+    }
 }

@@ -6,7 +6,7 @@ class About extends Component {
     render() {
         return (
             <div className="bgAbout">
-                <div className="container text-right content" dir="rtl">
+                <div className="container text-right aboutContent" dir="rtl">
 
                     <p><u>לכל המלמדים</u>, (וגם ללומדים)</p>
 
@@ -22,7 +22,7 @@ class About extends Component {
                         <div className="col-md-4">
                             <p><strong>שחרור התלמיד מהתלות המוחלטת במורה </strong></p>
                         </div>
-                        <div className="col-md-8">
+                        <div className="col-md-8 aboutText">
                             <p>מעתה התלמיד יכול לחזור על החומר הנלמד ולא רק להישען על מה שהצליח לקלוט בכיתה.</p>
                         </div>
                     </div>
@@ -31,7 +31,7 @@ class About extends Component {
                         <div className="col-md-4">
                             <p><strong>עבודת בית משמעותית </strong></p>
                         </div>
-                        <div className="col-md-8">
+                        <div className="col-md-8 aboutText">
                             <p>מעתה ניתן לבקש מתלמידים לא רק לפתור תרגילים שכבר נלמדו, אלא אף להכין את הקרקע לנושא שעדיין לא נלמד בכיתה.</p>
                         </div>
                     </div>
@@ -40,7 +40,7 @@ class About extends Component {
                         <div className="col-md-4">
                             <p><strong>בניית הביטחון העצמי של התלמיד </strong></p>
                         </div>
-                        <div className="col-md-8">
+                        <div className="col-md-8 aboutText">
                             <p>ההצלחה להפוך ללומד עצמאי ואחראי מעצימה את הביטחון העצמי של התלמיד.</p>
                         </div>
                     </div>
@@ -49,7 +49,7 @@ class About extends Component {
                         <div className="col-md-4">
                             <p><strong>יכולת השלמת חומר באופן עצמאי </strong></p>
                         </div>
-                        <div className="col-md-8">
+                        <div className="col-md-8 aboutText">
                             <p>מעתה התלמיד יכול להישען על האתר כמקור מידע, כך שאם נעדר משיעור או מרצף שיעורים, יוכל להשלים את החסר באופן עצמאי.</p>
                         </div>
                     </div>
@@ -58,7 +58,7 @@ class About extends Component {
                         <div className="col-md-4">
                             <p><strong>אפשרויות גיוון למידה </strong></p>
                         </div>
-                        <div className="col-md-8">
+                        <div className="col-md-8 aboutText">
                             <p>מעתה ניתן גם במתמטיקה לגוון את שיטות ההוראה ע"י תלמידים המלמדים תלמידים.  </p>
                         </div>
                     </div>
@@ -72,7 +72,7 @@ class About extends Component {
                         <div className="col-md-4">
                             <p><strong>הֶספק רב יותר  </strong></p>
                         </div>
-                        <div className="col-md-8">
+                        <div className="col-md-8 aboutText">
                             <p>חלק מהטכניקות הנלמדות בכיתה, יכולות להילמד באופן עצמאי כשיעורי בית.</p>
                         </div>
                     </div>
@@ -81,7 +81,7 @@ class About extends Component {
                         <div className="col-md-4">
                             <p><strong>עמידה בתכנית הלימודים</strong></p>
                         </div>
-                        <div className="col-md-8">
+                        <div className="col-md-8 aboutText">
                             <p>עבודה עצמית גדולה יותר מאפשרת לימוד החומר כולו.</p>
                         </div>
                     </div>
@@ -90,7 +90,7 @@ class About extends Component {
                         <div className="col-md-4">
                             <p><strong>הדגשת נושאים מורכבים והעמקת ידע</strong></p>
                         </div>
-                        <div className="col-md-8">
+                        <div className="col-md-8 aboutText">
                             <p>מעתה ניתן לפנות זמן רב יותר לעיסוק בנושאים אינטגרטיביים ופחות בטכניקות בסיסיות.</p>
                         </div>
                     </div>

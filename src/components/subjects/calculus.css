@@ -1,94 +1,48 @@
-.bg {
-    background-color: #8FB5CB;
-    border-top: 1px solid #8FB5CB;
-    border-bottom: 1px solid #8FB5CB;
-  }
-  
-  .content{
-    border-radius: 20px;
-    -webkit-box-shadow: 2px 0 15px 0;
-            box-shadow: 2px 0 15px 0;
-    background-color: white;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    padding: 50px 30px;
-    min-height: 500px;
-    /*img animations:*/
-  }
-  
-  .shoppingCart {
-    margin-right: 6px;
-  }
-  
-  .shoppingCartLink {
-    color: inherit;
-    text-decoration: none;
-  }
-  
-  h1 {
-    font-family: hadasimclm;
-    font-size: 45px;
-  }
-  
-  p {
-    margin-top: 15px;
-  }
-  
-  pre {
-    font-family: inherit;
-    font-size: inherit;
-  }
-  
-  .understandImg {
-    position: relative;
-    height: 80px;
-    margin-top: 20px;
-  }
-  
-  .understandBtn {
-    margin-right: 100px;
-  }
+
+
+
   
   
   h5 {
     padding-right: 20px;
   }
   
-  #img1 {
+  #img1Cal {
     position: relative;
     right: 500px;
     bottom: 100px;
   }
-  
-  #img2 {
-    position: relative;
-    right: 150px;
+
+  #img2-3Cal{
+    text-align: center;
   }
   
-  #img3 {
-    position: relative;
-    right: 350px;
+  #img2Cal {
+    margin-left: 180px;
   }
   
-  #img4 {
+  #img4Cal {
     height: 60px;
   }
   
-  #img5 {
+  #img5Cal {
     height: 55px;
   }
   
-  #img6 {
-    height: 180px;
-    position: relative;
-    right: 300px;
+  #img6Cal {
+    text-align: center;
   }
   
-  #img7 {
+  #questionsCal {
     position: relative;
-    left: 50px;
-    /* bottom: 50px; */
   }
+
+  #img7Cal {
+    position: absolute;
+    left: 150px;
+    top: 0;
+  }
+
   
   .content1, .content2 {
     padding: 0 50px;
@@ -97,17 +51,9 @@
     border-left: 1px solid #A9A9A9;
   }
   
-  .questions {
-    position: relative;
-    right: 100px;
-    bottom: 20px;
-    border-right: 3px solid black;
-    padding-right: 30px;
-  }
+
   
-  .answer1, .answer2, .answer3, .answer4 {
-    display: inline;
-  }
+  
 
   .answer3, .answer4 {
     position: relative;
@@ -124,89 +70,7 @@
     bottom: 70px;
   }
 
-  .shoppingBtn {
-    margin-right: 550px;
-    position: absolute;
-    bottom: 70px;
-  }
 
-/*------------------------------------------------------------*/
-/*Animations:*/
-
-.spinImg {
-    -webkit-animation: spin 1s linear infinite;
-            animation: spin 1s linear infinite;
-  }
-  
-  @-webkit-keyframes spin {
-    0% {
-      -webkit-transform: rotate(0deg);
-              transform: rotate(0deg);
-    }
-    25% {
-      -webkit-transform: rotate(20deg);
-              transform: rotate(20deg);
-    }
-    50% {
-      -webkit-transform: rotate(0deg);
-              transform: rotate(0deg);
-    }
-    75% {
-      -webkit-transform: rotate(-20deg);
-              transform: rotate(-20deg);
-    }
-  }
-  
-  @keyframes spin {
-    0% {
-      -webkit-transform: rotate(0deg);
-              transform: rotate(0deg);
-    }
-    25% {
-      -webkit-transform: rotate(20deg);
-              transform: rotate(20deg);
-    }
-    50% {
-      -webkit-transform: rotate(0deg);
-              transform: rotate(0deg);
-    }
-    75% {
-      -webkit-transform: rotate(-20deg);
-              transform: rotate(-20deg);
-    }
-  }
-
-.moveImg1{
-    position: relative;
-    -webkit-animation: moveImg1 0.4s linear forwards;
-            animation: moveImg1 0.4s linear forwards;
-}
-
-@-webkit-keyframes moveImg1 {
-    0%   {left:0px; top:0px;}
-    100% {left:230px; top:120px;}
-}
-
-@keyframes moveImg1 {
-    0%   {left:0px; top:0px;}
-    100% {left:230px; top:120px;}
-}
-
-.moveImg2{
-    position: relative;
-    -webkit-animation: moveImg2 0.4s linear forwards;
-            animation: moveImg2 0.4s linear forwards;
-}
-
-@-webkit-keyframes moveImg2 {
-    0%   {left:230px; top:120px;}
-    100% {left:0px; top:0px;}
-}
-
-@keyframes moveImg2 {
-    0%   {left:230px; top:120px;}
-    100% {left:0px; top:0px;}
-}
 
 .react-slidedown.my-dropdown-slidedown1 {
   transition-duration: 0.5s;
@@ -219,4 +83,61 @@
 .react-slidedown.my-dropdown-slidedown3 {
   transition-duration: 0.4s;
   overflow: hidden;
+}
+
+
+
+@media only screen and (max-width: 1199px) {
+  #img7Cal {
+    position: absolute;
+    left: 75px;
+    bottom: 23px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  #img1Cal {
+    position: relative;
+    right: 365px;
+    bottom: 80px;
+  }
+  #img2Cal {
+    margin-left: 40px;
+  }
+  #img7Cal {
+    left: 75px;
+    width: 250px;  
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  #img1Cal {
+    position: relative;
+    right: 192px;
+    bottom: 70px;
+  }
+  #img2Cal {
+    width: 150px;
+  }
+  #img3Cal {
+    width: 230px;
+  }
+  #img7Cal {
+    position: initial;
+    display: block; 
+  }
+}
+
+@media only screen and (max-width: 521px) {
+  #img1Cal {
+    position: relative;
+    right: 120px;
+    bottom: 0px;
+  }
+  #img2Cal {
+    margin-left: 0px;
+  }
+  #img3Cal {
+    width: 210px;
+  }
 }

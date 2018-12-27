@@ -1,6 +1,6 @@
 #searchResult{
     position: absolute;
-    left: 50px;
+    left: 26px;
     top: 51px;
     background-color: #3a87b4; 
     color: white;
@@ -8,7 +8,7 @@
     z-index: 2;
 }
 
-#searchResult .link{
+#searchResult .searchLink{
     position: relative;
     text-align: right;
     border-bottom: 1px solid #1B3F54;
@@ -16,7 +16,7 @@
     cursor: pointer;
 }
 
-#searchResult .link .nav-link{
+#searchResult .searchLink .nav-link{
     text-decoration: none;
     color: inherit;
     padding-right: 5px;
@@ -24,7 +24,24 @@
     padding-bottom: 3px;
 }
 
-#searchResult .link:hover{
+#searchResult .searchLink:hover{
     background-color: #f3f8fb;
     color: black;
 }
+
+
+
+@media only screen and (max-width: 991px) {
+
+    #searchResult{
+        position: absolute;
+        left: -3px;
+        top: 51px;
+        background-color: #3a87b4; 
+        color: white;
+        width: 206px;  
+        z-index: 2;
+    }
+    
+  
+  }

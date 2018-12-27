@@ -29,13 +29,22 @@ class NavBar extends Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            width: window.innerWidth,
+        };
         this.badgeNum = this.badgeNum.bind(this);
         this.searchChars = this.searchChars.bind(this);
         this.resetProps = this.resetProps.bind(this);
+        this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     }
 
     componentDidMount() {
         this.badgeNum();
+        window.addEventListener('resize', this.updateWindowDimensions);
+    }
+
+    updateWindowDimensions() {
+        this.setState({ width: window.innerWidth });
     }
 
     badgeNum() {
@@ -80,6 +89,11 @@ class NavBar extends Component {
         this.props.foundChars(foundMatch);
     }
 
+    collapseNav() {
+        if (this.state.width < 992) {
+            document.getElementById("navTog").click();
+        }
+    }
 
 
     render() {
@@ -89,49 +103,51 @@ class NavBar extends Component {
             <BrowserRouter>
                 <div className="NavBar">
                     <nav className="navbar navbar-expand-lg navbar-light row">
-                        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                            <form className="form-inline my-2 my-lg-0">
+                        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="navTog">
+                            <span className="navbar-toggler-icon"></span>
+                        </button>
+                        <div className="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+
+                            <ul className="navbar-nav">
+                                <li className="nav-item">
+                                    <NavLink className="nav-link" to="/mainPage" activeStyle={{ color: 'black' }} onClick={() => { this.resetProps(); this.collapseNav(); }}>דף הבית </NavLink>
+                                </li>
+                                <li className="nav-item">
+                                    <NavLink className="nav-link" to="/about" activeStyle={{ color: 'black' }} onClick={() => { this.resetProps(); this.collapseNav(); }}>אודות</NavLink>
+                                </li>
+                                <li className="nav-item dropdown">
+                                    <a className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" dir="rtl">
+                                        נושאים
+                                    <span style={{ marginRight: 5 }}></span></a>
+                                    <div className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <NavLink className="dropdown-item text-right" to="/inequation" onClick={() => { this.resetProps(); this.collapseNav(); }}>אי שוויון עם ערך מוחלט</NavLink>
+                                        <NavLink className="dropdown-item text-right" to="/wordProblems" onClick={() => { this.resetProps(); this.collapseNav(); }}>בעיות מילוליות</NavLink>
+                                        <NavLink className="dropdown-item text-right" to="/induction" onClick={() => { this.resetProps(); this.collapseNav(); }}>אינדוקציה מתמטית</NavLink>
+                                        <NavLink className="dropdown-item text-right" to="/calculus" onClick={() => { this.resetProps(); this.collapseNav(); }}>חשבון דיפרנציאלי ואינטגרלי</NavLink>
+                                        <NavLink className="dropdown-item text-right" to="/trig" onClick={() => { this.resetProps(); this.collapseNav(); }}>טריגונומטריה</NavLink>
+                                    </div>
+                                </li>
+                                <li className="nav-item">
+                                    <NavLink className="nav-link" to="/contact" activeStyle={{ color: 'black' }} onClick={() => { this.resetProps(); this.collapseNav(); }}>צרו קשר</NavLink>
+                                </li>
+                            </ul>
+                        </div>
+                        <form className="form-inline my-2 my-lg-0 navbar-expand" id="leftNav">
+
+                            <ul className="navbar-nav">
+                                <li className="nav-item">
+                                    <div className="items"><strong><span className="itemsNum">{this.props.itemsSum}</span></strong></div>
+                                </li>
+                                <li className="nav-item">
+                                    <NavLink className="nav-link" to="/shoppingCart" activeStyle={{ color: 'black' }} onClick={() => { this.resetProps(); this.collapseNav(); }}><FontAwesomeIcon icon={faCartArrowDown} size="2x" /></NavLink>
+                                </li>
                                 <input onChange={this.searchChars} className="form-control mr-sm-2" id="searchLine" type="search" placeholder="חיפוש" aria-label="Search" dir="rtl">
                                 </input>
 
                                 {this.props.foundMatch ? <Search chapters={this.props.chaptersFound} setSlide={this.props.setSlide} /> : null}
+                            </ul>
+                        </form>
 
-                                <ul className="navbar-nav mr-auto">
-                                    <li className="nav-item">
-                                        <NavLink className="nav-link" to="/shoppingCart" activeStyle={{ color: 'black' }} onClick={this.resetProps}><FontAwesomeIcon icon={faCartArrowDown} size="2x" /></NavLink>
-                                    </li>
-                                    <li className="nav-item">
-                                        <div className="items"><strong><span className="itemsNum">{this.props.itemsSum}</span></strong></div>
-                                    </li>
-                                </ul>
-                            </form>
-                        </div>
-                        <ul className="navbar-nav mr-auto">
-                            <li className="nav-item">
-                                <NavLink className="nav-link" to="/contact" activeStyle={{ color: 'black' }} onClick={this.resetProps}>צרו קשר</NavLink>
-                            </li>
-                            <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" dir="rtl">
-                                    נושאים
-                                    <span style={{ marginRight: 5 }}></span></a>
-                                <div className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <NavLink className="dropdown-item text-right" to="/inequation" onClick={this.resetProps}>אי שוויון עם ערך מוחלט</NavLink>
-                                    <NavLink className="dropdown-item text-right" to="/wordProblems" onClick={this.resetProps}>בעיות מילוליות</NavLink>
-                                    <NavLink className="dropdown-item text-right" to="/induction" onClick={this.resetProps}>אינדוקציה מתמטית</NavLink>
-                                    <NavLink className="dropdown-item text-right" to="/calculus" onClick={this.resetProps}>חשבון דיפרנציאלי ואינטגרלי</NavLink>
-                                    <NavLink className="dropdown-item text-right" to="/trig" onClick={this.resetProps}>טריגונומטריה</NavLink>
-                                </div>
-                            </li>
-                            <li className="nav-item">
-                                <NavLink className="nav-link" to="/about" activeStyle={{ color: 'black' }} onClick={this.resetProps}>אודות</NavLink>
-                            </li>
-                            <li className="nav-item">
-                                <NavLink className="nav-link" to="/mainPage" activeStyle={{ color: 'black' }} onClick={this.resetProps}>דף הבית </NavLink>
-                            </li>
-                        </ul>
-                        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span className="navbar-toggler-icon"></span>
-                        </button>
                     </nav>
 
                     <Route exact path="/" render={(props) => (<MainPage {...props} setSlide={this.props.setSlide} />)} />

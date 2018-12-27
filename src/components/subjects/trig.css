@@ -1,85 +1,32 @@
-.bg {
-    background-color: #8FB5CB;
-    border-top: 1px solid #8FB5CB;
-    border-bottom: 1px solid #8FB5CB;
-  }
-  
-  .content{
-    border-radius: 20px;
-    -webkit-box-shadow: 2px 0 15px 0;
-            box-shadow: 2px 0 15px 0;
-    background-color: white;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    padding: 50px 30px;
-    min-height: 500px;
-    /*img animations:*/
-  }
-  
-  .shoppingCart {
-    margin-right: 6px;
-  }
-  
-  .shoppingCartLink {
-    color: inherit;
-    text-decoration: none;
-  }
-  
-  h1 {
-    font-family: hadasimclm;
-    font-size: 45px;
-  }
-  
-  p {
-    margin-top: 15px;
-  }
-  
-  pre {
-    font-family: inherit;
-    font-size: inherit;
-  }
-  
-  .understandImg {
-    position: relative;
-    height: 80px;
-    margin-top: 20px;
-  }
-  
-  .understandBtn {
-    margin-right: 100px;
-  }
+
   
   h5 {
     padding-right: 20px;
   }
   
-  #img1 {
+  #trigImg1 {
     position: relative;
     right: 100px;
+    top: 0;
   }
   
-  #img2 {
-    position: relative;
-    right: 250px;
+  #trigImg2 {
+    display: block;
+    margin: auto;
   }
   
-  #img3 {
+  #trigImg3 {
     position: relative;
     right: 80px;
     bottom: 10px;
   }
   
-  #img4 {
-    position: relative;
-    right: 250px;
+  #trigImg4 {
+    display: block;
+    margin: auto;
   }
   
-  .content1, .content2 {
-    padding: 0 50px;
-    margin: 0 30px;
-    border-right: 1px solid #A9A9A9;
-    border-left: 1px solid #A9A9A9;
-  }
+  
   
   #top1 {
     border-bottom: 1px solid black;
@@ -96,13 +43,29 @@
     right: 40px;
     bottom: 70px;
   }
-  
-  #fraction2 {
-    position: relative;
-    right: 200px;
-    bottom: 110px;
+
+  #fraction1 {
+    height: 55px;
   }
   
+  #fraction2 {
+    height: 55px;
+    white-space: nowrap;
+  }
+ 
+  #fraction2R {
+    display: inline-block;
+    vertical-align: top;
+  }
+  
+  #fraction2L {
+    display: inline-block;
+    position: relative;
+    bottom: 10px;
+    right: 10px;
+  }
+
+   
   #top2 {
     border-bottom: 1px solid black;
     width: 72px;
@@ -113,50 +76,85 @@
     bottom: 17px;
     right: 15px;
   }
-  
-  #sentence2 {
-    position: relative;
-    left: 200px;
-    top: 50px;
-  }
-  
+
   #equal {
     position: relative;
     right: 75px;
     bottom: 70px;
   }
-  
-  .block1 {
-    position: relative;
-    bottom: 180px;
-  }
-  
-  .block2 {
-    position: relative;
-    bottom: 150px;
-    left: 15px;
-  }
-  
-  .block3 {
-    position: relative;
-    bottom: 150px;
-  }
-  
-  .questions {
-    position: relative;
-    right: 100px;
-    bottom: 20px;
-    border-right: 3px solid black;
-    padding-right: 30px;
-  }
-  
-  #trigTable{
-    position: relative;
-    left: 150px;
+
+  #trigBlock1{
+    display: block;
   }
 
+  #trigBlock1R{
+    display: inline-block;
+    width: 50%;
+  }
+
+  #trigBlock1L{
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+    margin-right: 100px;
+  }
+
+  #trigBlock2{
+    display: block;
+  }
+
+  #trigBlock2R{
+    display: inline-block;
+  }
+
+  #trigBlock2L{
+    display: inline-block;
+    width: 360px;
+    vertical-align: top;
+    margin-right: 10px;
+  }
+
+  #trigBlock3{
+    display: block;
+  }
+
+  #trigBlock3R{
+    display: inline-block;
+    height: 273px;
+    position: relative;
+  }
+
+  #trigBlock3R p:nth-child(2){
+    position: absolute;
+    bottom: 0;
+  }
+
+  #trigBlock3L{
+    display: inline-block;
+    vertical-align: top;
+    width: 20%;
+    margin-right: 35px;
+  }
+
+  #trigBlock4{
+    display: block;
+  }
+
+  #trigBlock4R{
+    display: inline-block;
+  }
+
+  #trigBlock4L{
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 40px;
+  }
+  
+
+  
+  
+
   #trigTable td:nth-child(1) {
-    /* max-width: 30px; */
     width: 30px;
     border: 1px solid black;
   }
@@ -170,101 +168,9 @@
     width: 150px;
     border: 1px solid black;
   }
-  
-  .disabledBtn, .content1Btn, .content2Btn {
-    padding-right: 40px;
-  }
-  
-  .trigAllChaptersBtn {
-    /* margin-right: 400px; */
-    margin-right: 380px;
-    position: absolute;
-    bottom: 70px;
-  }
 
-  .shoppingBtn {
-    margin-right: 550px;
-    position: absolute;
-    bottom: 70px;
-  }
 
-  /*------------------------------------------------------------*/
-/*Animations:*/
 
-.spinImg {
-    -webkit-animation: spin 1s linear infinite;
-            animation: spin 1s linear infinite;
-  }
-  
-  @-webkit-keyframes spin {
-    0% {
-      -webkit-transform: rotate(0deg);
-              transform: rotate(0deg);
-    }
-    25% {
-      -webkit-transform: rotate(20deg);
-              transform: rotate(20deg);
-    }
-    50% {
-      -webkit-transform: rotate(0deg);
-              transform: rotate(0deg);
-    }
-    75% {
-      -webkit-transform: rotate(-20deg);
-              transform: rotate(-20deg);
-    }
-  }
-  
-  @keyframes spin {
-    0% {
-      -webkit-transform: rotate(0deg);
-              transform: rotate(0deg);
-    }
-    25% {
-      -webkit-transform: rotate(20deg);
-              transform: rotate(20deg);
-    }
-    50% {
-      -webkit-transform: rotate(0deg);
-              transform: rotate(0deg);
-    }
-    75% {
-      -webkit-transform: rotate(-20deg);
-              transform: rotate(-20deg);
-    }
-  }
-
-.moveImg1{
-    position: relative;
-    -webkit-animation: moveImg1 0.4s linear forwards;
-            animation: moveImg1 0.4s linear forwards;
-}
-
-@-webkit-keyframes moveImg1 {
-    0%   {left:0px; top:0px;}
-    100% {left:230px; top:120px;}
-}
-
-@keyframes moveImg1 {
-    0%   {left:0px; top:0px;}
-    100% {left:230px; top:120px;}
-}
-
-.moveImg2{
-    position: relative;
-    -webkit-animation: moveImg2 0.4s linear forwards;
-            animation: moveImg2 0.4s linear forwards;
-}
-
-@-webkit-keyframes moveImg2 {
-    0%   {left:230px; top:120px;}
-    100% {left:0px; top:0px;}
-}
-
-@keyframes moveImg2 {
-    0%   {left:230px; top:120px;}
-    100% {left:0px; top:0px;}
-}
 
 .react-slidedown.my-dropdown-slidedown1 {
   transition-duration: 0.8s;
@@ -277,4 +183,85 @@
 .react-slidedown.my-dropdown-slidedown3 {
   transition-duration: 0.4s;
   overflow: hidden;
+}
+
+
+
+@media only screen and (max-width: 991px) {
+  #trigBlock1L{
+    margin-right: 70px;
+  }
+  #trigBlock2L{
+    width: 250px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  #trigBlock1{
+    height: 770px;
+  }
+
+  #trigBlock1R{
+    width: 65%;
+  }
+  
+  #trigBlock1L{
+    margin-right: 0px;
+    width: 0;
+  }
+
+  #trigBlock1L img{
+    width: 170px;
+    margin-bottom: 120px;
+    margin-top: 10px;
+  }
+  #trigBlock2L{
+    width: 162px;
+  }
+
+  #trigTable {
+    position: relative;
+    left: 10px;
+  }
+  #trigTable td:nth-child(n+2):nth-child(-n+4) {
+    width: 55px;
+  } 
+  #trigTable td:nth-child(5) {
+    width: 121px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  #trigBlock1 {
+    height: 820px;
+  }
+  
+  #trigBlock1R {
+    width: 55%;
+  }
+
+  #trigBlock1L {
+    margin-right: 20px;
+  }
+
+  #trigBlock2L {
+    width: 130px;
+  }
+  
+  #tr1 {
+    width: 360px;
+  }
+
+  #trigTable {
+    font-size: 12px;
+  }
+  #trigTable img{
+    width: 100px;
+  }
+  #trigTable td:nth-child(n+2):nth-child(-n+4) {
+    width: 45px;
+  } 
+  #trigTable td:nth-child(5) {
+    width: 101px;
+  }
 }

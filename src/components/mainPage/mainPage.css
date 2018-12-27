@@ -5,22 +5,23 @@
     background-size: cover;
     background-position-y: -100px;
     overflow-x: hidden;
+    position: relative;
   }
   
   #coverImg #headline {
-    position: relative;
-    left: 650px;
-    top: 100px;
+
     color: white;
-    /* width: 300px; */
+    position: absolute;
+    right: 0;
+    bottom: 50%;
   }
   
   #coverImg #headline h1 {
     font-family: hadasimclm;
     font-size: 70px;
     border-bottom: 5px solid #FFDBAE;
-    width: 500px;
-    padding-right: 50px;
+    width: 100%;
+    padding-right: 2vw;
   }
   
   #coverImg #headline h1 #understand {
@@ -30,31 +31,181 @@
   #coverImg #headline h1 #math {
     color: #4B2E0B;
   }
+
+  #line{
+    display: none;
+  }
   
   #coverImg #content {
     position: absolute;
-    top: 440px;
+    bottom: 15px;
     width: 600px;
     color: #4B2E0B;
     font-family: Comic Sans MS, Comic Sans, cursive;
     border-top: 5px solid #FFDBAE;
     padding-top: 10px;
   }
+
+  /*-----------------------------------------------------*/
+
+  #chapters2{
+    display: none;
+  }
+
+  #chapters1{
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  #chapters1 .card {
+    display: inline-block;
+    white-space: normal;
+    margin: 40px;
+    width: 280px;
+  }
   
+  #chapters1 .card img {
+    height: 170px;
+    padding: 10px;
+  }
+
+  #chapters1 .cardBtn{
+    margin-bottom: 20px;
+  }
+
+
+
   @media only screen and (min-width: 1500px) {
     #coverImg #content {
       color: white;
       background-color: rgba(255, 219, 174, 0.5);
-      top: 444px;
       border-top: 5px solid #B6864B;
     }
   }
-  
-  #chapters .card {
-    margin: 40px auto;
+
+
+  @media only screen and (max-width: 1040px) {
+    #coverImg {
+      min-height: 320px;
+      background-position-y: -40px;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    #coverImg #headline {
+      bottom: 31%;
+    }
+
+    #coverImg #headline h1 {
+      font-size: 5vw;
+      border-bottom: none;
+      /* width: 300px; */
+      /* padding-right: 2vw; */
+    }
+    
+    #coverImg #headline h1 #understand {
+      font-size: 130px;
+    }
+
+    #line{
+      display: block;
+      width: 90%;
+      height: 40px;
+      border-top: 5px solid #FFDBAE;
+      position: absolute;
+      top: 64%;
+      right: 0;
+    }
+    
+    #coverImg #headline h1 #math {
+      font-size: 65px;
+    }
+    
+    
+    #coverImg #content {
+      color: white;
+      text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+      position: absolute;
+      bottom: 0;
+      left: 100px;
+      width: 462px;
+      border-top: none;
+    }
+    #coverImg #content h3{
+      font-size: 25px;
+    }
+
+
+    #chapters1{
+      display: none;
+    }
+
+    #chapters2{
+      display: initial;
+    }
+
+    #chapters2 .card{
+      display: block;
+      width: 80%;
+      margin: 20px auto;
+    }
+
+    #chapters2 .chapters2Img1{
+      background-image: url('../../img/calculus4.jpg'); 
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+
+    #chapters2 .chapters2Img2{
+      background-image: url('../../img/induction2.jpg'); 
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+
+    #chapters2 .chapters2Img3{
+      background-image: url('../../img/trig6.jpg'); 
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+    
+  }
+
+
+  @media only screen and (max-width: 767px) {
+
+    #coverImg #content {
+      width: 284px;
+    }
+
+    #coverImg #content h3{
+      font-size: 20px;
+    }
+
   }
   
-  #chapters .card img {
-    height: 170px;
-    padding-top: 10px;
+  @media only screen and (max-width: 640px) {
+    #coverImg #headline {
+      color: white;
+      position: initial;
+      margin: auto;
+      margin-top: 25px;
+    }
+    #line {
+      top: 56%;
+      right: 30px;
+    }
+    #coverImg #content {
+      width: 430px;
+      left: 50%;
+      transform: translate(-50%);
+      bottom: 38px;
+    }
   }
+  
+
+  
+ 

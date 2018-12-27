@@ -1,45 +1,62 @@
 nav {
-    position: fixed;
-    background-color: rgba(0, 0, 0, 0);
-    padding-right: 35px;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0);
+  padding-right: 35px;
+  direction: rtl;
+}
+
+.navbar{
+  padding: 0 30px;
+}
+
+.NavBar{
+  overflow-x: hidden;
+}
+
+
+nav li {
+  padding: 8px 15px;
+}
+
+nav .items {
+  position: relative;
+  top: 15px;
+  right: 30px;
+  background-color: orange;
+  color: white;
+  height: 20px;
+  width: 15px;
+  text-align: center;
+}
+
+nav .items .itemsNum {
+  position: relative;
+  bottom: 2px;
+}
+
+nav .dropdown-toggle{
+  cursor: pointer;
+}
+
+#searchLine{
+  background-image: url('../../img/search.jpg');
+  background-size: 50px;
+  background-repeat: no-repeat;
+  background-position-y: 5px;
+  margin: auto;
+}
+
+
+@media only screen and (max-width: 991px) {
+
+  .navbar-toggler{
+    margin: 10px 0;
   }
 
-  .navbar{
-    padding: 0 30px;
+  #leftNav{
+    position: absolute;
+    left: 5px;
+    top: -10px;
   }
 
-  .NavBar{
-    overflow-x: hidden;
-  }
-  
-  nav li {
-    padding: 8px 15px;
-  }
-  
-  nav .items {
-    position: relative;
-    top: 15px;
-    right: 30px;
-    background-color: orange;
-    color: white;
-    height: 20px;
-    width: 15px;
-    text-align: center;
-  }
-  
-  nav .items .itemsNum {
-    position: relative;
-    bottom: 2px;
-  }
-
-  nav .dropdown-toggle{
-    cursor: pointer;
-  }
-
-  #searchLine{
-    background-image: url('../../img/search.jpg');
-    background-size: 50px;
-    background-repeat: no-repeat;
-    background-position-y: 5px;
-    margin-left: 20px;
-  }
+}
