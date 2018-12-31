@@ -38,6 +38,10 @@ class WordProblems extends Component {
         }
     }
 
+    componentDidMount() {
+        document.title = "להבין מתמטיקה - בעיות מילוליות"
+    }
+
     openContent(x) {
         if (x === 'slide1') {
             this.props.setSlide1(!this.props.slide1);
@@ -180,7 +184,7 @@ class WordProblems extends Component {
 
                                                 <p>פתרון:
                                             <br />מקריאה ראשונית נמצא שהנעלם הטבעי הוא מהירות המכונית. כלומר:
-                                                                                                                            x –  מהירות המכונית
+                                                                                                                                    x –  מהירות המכונית
                                         </p>
 
                                                 <p>נוסיף שִׂרטוט של הבעיה: <br /> <img src={require("../../img/wordProblems1.png")} id="wpImg" alt="no image" /></p>

@@ -37,6 +37,9 @@ class Induction extends Component {
         }
     }
 
+    componentDidMount() {
+        document.title = "להבין מתמטיקה - אינדוקציה מתמטית"
+    }
 
 
     openContent(x) {

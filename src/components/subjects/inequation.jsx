@@ -43,6 +43,10 @@ class Inequation extends Component {
         }
     }
 
+    componentDidMount() {
+        document.title = "להבין מתמטיקה - אי שוויון עם ערך מוחלט"
+    }
+
     openContent(x) {
         if (x === 'slide1') {
             this.props.setSlide1(!this.props.slide1);

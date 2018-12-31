@@ -5,6 +5,10 @@ import { BrowserRouter, Link } from 'react-router-dom';
 
 class MainPage extends Component {
 
+    componentDidMount() {
+        document.title = "להבין מתמטיקה - עמוד ראשי"
+    }
+
     render() {
         return (
             <BrowserRouter>

@@ -3,6 +3,10 @@ import './about.css';
 
 class About extends Component {
 
+    componentDidMount() {
+        document.title = "להבין מתמטיקה - אודות"
+    }
+
     render() {
         return (
             <div className="bgAbout">

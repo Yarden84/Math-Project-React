@@ -10,6 +10,10 @@ library.add(faPhoneSquare);
 
 class Contact extends Component {
 
+    componentDidMount() {
+        document.title = "להבין מתמטיקה - צרו קשר"
+    }
+
     render() {
         return (
             <div class="bgContact">

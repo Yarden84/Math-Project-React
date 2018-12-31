@@ -44,6 +44,10 @@ class Calculus extends Component {
 
     }
 
+    componentDidMount() {
+        document.title = "להבין מתמטיקה - חשבון דיפרנציאלי ואינטגרלי"
+    }
+
 
     openContent(x) {
         if (x === 'slide1') {

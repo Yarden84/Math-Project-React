@@ -5,11 +5,11 @@
     background-image: url("../../img/underConstruction3.jpg");
     background-repeat: no-repeat;
     background-size: contain;
+    background-position-x: -10px;
 }
   
-.payment h4 {
-  position: relative;
-  top: 430px;
+.paymentText {
+  margin-bottom: 40px;
 }
 
 

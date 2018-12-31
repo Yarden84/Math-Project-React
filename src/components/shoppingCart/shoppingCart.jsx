@@ -28,6 +28,9 @@ class ShoppingCart extends Component {
 
 
     componentDidMount() {
+
+        document.title = "להבין מתמטיקה - סל קניות"
+
         let subjectStatus = [localStorage.getItem('inequation'), localStorage.getItem('wordProblems'), localStorage.getItem('induction'), localStorage.getItem('calculus'), localStorage.getItem('trig')];
 
         let priceSum = this.props.priceSum;

@@ -39,6 +39,10 @@ class Trig extends Component {
         }
     }
 
+    componentDidMount() {
+        document.title = "להבין מתמטיקה - טריגונומטריה"
+    }
+
     openContent(x) {
         if (x === 'slide1') {
             this.props.setSlide1(!this.props.slide1);

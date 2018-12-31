@@ -2,14 +2,18 @@ import React, { Component } from 'react';
 import './payment.css';
 
 class Payment extends Component {
-    state = {}
+
+    componentDidMount() {
+        document.title = "להבין מתמטיקה - תשלום"
+    }
+
     render() {
         return (
-            <div class="container payment">
-
-                <h4 dir="rtl" class="text-center">מתנצלים, לא ניתן לשלם כרגע... חלק זה יושלם בקרוב!</h4>
-
+            <div>
+                <div className="container payment"></div>
+                <h4 dir="rtl" className="text-center paymentText">מתנצלים, לא ניתן לשלם כרגע... חלק זה יושלם בקרוב!</h4>
             </div>
+
         );
     }
 }
