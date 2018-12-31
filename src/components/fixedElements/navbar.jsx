@@ -109,6 +109,16 @@ class NavBar extends Component {
                         <div className="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
 
                             <ul className="navbar-nav">
+                                <li className="nav-item" id="leftNavCollapse">
+                                    <form className="form-inline my-2 my-lg-0 navbar-expand" >
+                                        <ul className="navbar-nav">
+                                            <input onChange={this.searchChars} className="form-control mr-sm-2" id="searchLine2" type="search" placeholder="חיפוש" aria-label="Search" dir="rtl">
+                                            </input>
+                                            {this.props.foundMatch ? <Search chapters={this.props.chaptersFound} setSlide={this.props.setSlide} /> : null}
+                                        </ul>
+                                    </form>
+                                </li>
+
                                 <li className="nav-item">
                                     <NavLink className="nav-link" to="/mainPage" activeStyle={{ color: 'black' }} onClick={() => { this.resetProps(); this.collapseNav(); }}>דף הבית </NavLink>
                                 </li>
@@ -144,7 +154,7 @@ class NavBar extends Component {
                                 <input onChange={this.searchChars} className="form-control mr-sm-2" id="searchLine" type="search" placeholder="חיפוש" aria-label="Search" dir="rtl">
                                 </input>
 
-                                {this.props.foundMatch ? <Search chapters={this.props.chaptersFound} setSlide={this.props.setSlide} /> : null}
+                                {this.props.foundMatch && (this.state.width > 510) ? <Search chapters={this.props.chaptersFound} setSlide={this.props.setSlide} /> : null}
                             </ul>
                         </form>
 

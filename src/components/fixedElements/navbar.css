@@ -38,7 +38,7 @@ nav .dropdown-toggle{
   cursor: pointer;
 }
 
-#searchLine{
+#searchLine, #searchLine2{
   background-image: url('../../img/search.jpg');
   background-size: 50px;
   background-repeat: no-repeat;
@@ -46,6 +46,13 @@ nav .dropdown-toggle{
   margin: auto;
 }
 
+#searchLine2{
+  display: none;
+}
+
+#leftNavCollapse{
+  display: none;
+}
 
 @media only screen and (max-width: 991px) {
 
@@ -59,4 +66,20 @@ nav .dropdown-toggle{
     top: -10px;
   }
 
+}
+
+@media only screen and (max-width: 510px) {
+  #searchLine{
+    display: none;
+  }
+
+  #searchLine2{
+    display: initial;
+  }
+  
+  #leftNavCollapse{
+    display: initial;
+    margin: auto;
+    width: 230px;
+  }
 }

@@ -1,5 +1,5 @@
 #coverImg {
-    height: 500px;
+    min-height: 500px;
     background-image: url("../../img/math6.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -87,7 +87,7 @@
 
   @media only screen and (max-width: 1040px) {
     #coverImg {
-      height: 320px;
+      min-height: 320px;
       background-position-y: -40px;
       overflow-x: hidden;
       position: relative;
@@ -100,8 +100,6 @@
     #coverImg #headline h1 {
       font-size: 5vw;
       border-bottom: none;
-      /* width: 300px; */
-      /* padding-right: 2vw; */
     }
     
     #coverImg #headline h1 #understand {
@@ -203,6 +201,48 @@
       left: 50%;
       transform: translate(-50%);
       bottom: 38px;
+    }
+  }
+
+  @media only screen and (max-width: 467px) {
+    #coverImg #headline {
+      margin-top: 50px;
+    }
+    #coverImg #headline h1 #understand {
+      font-size: 110px;
+    }
+    #coverImg #headline h1 #math {
+      font-size: 50px;
+    }
+    #line {
+      top: 56%;
+      right: 50%;
+      transform: translate(50%);
+    }
+    #coverImg #content {
+      width: 90%;
+      bottom: 48px;
+    }
+    #coverImg #content h3 {
+      font-size: 18px;
+    }
+  }
+
+  @media only screen and (max-width: 379px) {
+    #coverImg #headline {
+      margin-top: 75px;
+    }
+    #coverImg #headline h1 #understand {
+      font-size: 85px;
+    }
+    #coverImg #headline h1 #math {
+      font-size: 38px;
+    }
+    #coverImg #content {
+      width: 83%;
+    }
+    #coverImg #content h3 {
+      font-size: 16px;
     }
   }
   

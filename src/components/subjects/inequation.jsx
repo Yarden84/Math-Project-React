@@ -147,9 +147,32 @@ class Inequation extends Component {
                                             <br /><br />
 
                                             <p><pre>פתרון מערכת "וגם":                        5x+7{this.state.lessThan}6x+3{this.state.lessThan}15</pre></p>
-                                            <p><pre>פירוק אי השוויונות:        6x+3{this.state.lessThan}15         וגם          5x+7{this.state.lessThan}6x+3</pre></p>
-                                            <p><pre>                                     x{this.state.lessThan}-4                                 6x{this.state.lessThan}12-</pre></p>
-                                            <p><pre>                                       x{this.state.greaterThan}4                                    x{this.state.lessThan}2</pre></p>
+
+                                            <div id="inBlock">
+                                                <div id="inBlockR">
+                                                    פירוק אי השוויונות:
+                                                </div>
+                                                <div id="inBlockL">
+                                                    <table>
+                                                        <tr>
+                                                            <td>5x+7 {this.state.lessThan} 6x+3</td>
+                                                            <td>וגם</td>
+                                                            <td>6x+3 {this.state.lessThan} 15</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>-x {this.state.lessThan} -4</td>
+                                                            <td></td>
+                                                            <td>6x {this.state.lessThan} 12</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>x {this.state.greaterThan} 4</td>
+                                                            <td></td>
+                                                            <td>x {this.state.lessThan} 2</td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+
                                             <img src={require("../../img/inequation2.png")} alt="no image 2" id="inequationImg2" />
                                             <p>והפתרון:  x=&Oslash;</p>
 

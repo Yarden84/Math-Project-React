@@ -98,5 +98,8 @@
     .link{
       margin: 0 8vw;
     }
+    #copyRight {
+      white-space: nowrap;
+    }
   }
  

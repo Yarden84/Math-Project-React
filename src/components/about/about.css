@@ -45,7 +45,7 @@
   }
   
   .aboutContent table {
-    margin-right: 165px;
+    margin: auto;
   }
 
   .aboutContent table tr td:nth-child(1){
@@ -65,5 +65,11 @@
     .aboutText{
       position: relative;
       bottom: 20px;
+    }
+  }
+
+  @media only screen and (max-width: 424px) {
+    .aboutContent {
+      border-radius: 0;
     }
   }

@@ -50,5 +50,27 @@
   }
 }
 
+@media only screen and (max-width: 496px) {
+  .wpTable2 td {
+    padding: 0;
+    width: 70px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #wpImg{
+    width: 105%;
+    height: 70px;
+    margin-top: 15px;
+  }
+}
+
+@media only screen and (max-width: 364px) {
+  .wpTable2 td {
+    padding: 5px;
+    width: 90px;
+  }
+}
+
 
   

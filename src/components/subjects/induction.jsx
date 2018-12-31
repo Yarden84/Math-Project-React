@@ -270,7 +270,7 @@ class Induction extends Component {
                                                                     <div id="ind2" dir="ltr">4+9+14+...+(5k-1) = <sup>1</sup>&frasl;<sub>2</sub>(5k<sup>2</sup>+3k)</div>
                                                                 </li>
                                                                 <li>
-                                                                    <p>צ"ל:  הזהות תתקיים גם עבור:  n = (k+1)</p>
+                                                                    <p>צ"ל:  הזהות תתקיים גם עבור: <span dir="ltr">n = (k+1)</span>  </p>
                                                                     <p>כלומר צריך להוכיח את הזהות:</p>
                                                                     <p id="indLong1">4+9+14+...+(5k-1)+[5(k+1)-1]=<sup>1</sup>&frasl;<sub>2</sub>[5(k+1)<sup>2</sup>+3(k+1)]</p>
                                                                     <div id="indLong2">
@@ -284,11 +284,11 @@ class Induction extends Component {
                                                                 </li>
                                                             </ol>
                                                             <p>הוכחה:</p>
-                                                            <p>לפי ההנחה: <span style={{ marginRight: 155 }} dir="ltr">4+9+14+...+(5k-1) = <sup>1</sup>&frasl;<sub>2</sub>(5k<sup>2</sup>+3k)</span></p>
-                                                            <p>על ידי הצבה: <span id="ind4" dir="ltr"><sup>1</sup>&frasl;<sub>2</sub>(5k<sup>2</sup>+3k)+[5(k+1)-1] = <sup>1</sup>&frasl;<sub>2</sub>[5(k+1)<sup>2</sup>+3(k+1)]</span></p>
-                                                            <p>נכפיל ב- 2: <span style={{ marginRight: 118 }} dir="ltr">(5k<sup>2</sup>+3k)+2[5(k+1)-1] = [5(k+1)<sup>2</sup>+3(k+1)]</span></p>
-                                                            <p>פתיחת סוגריים: <span style={{ marginRight: 79 }} dir="ltr">5k<sup>2</sup>+3k+10k+8 = 5k<sup>2</sup>+10k+5+3k+3</span></p>
-                                                            <p>כינוס: <span id="ind5" dir="ltr">5k<sup>2</sup>+13k+8 = 5k<sup>2</sup>+13k+8</span></p>
+                                                            <p>לפי ההנחה: <span style={{ marginRight: 155 }} className="indFix2" dir="ltr">4+9+14+...+(5k-1) = <sup>1</sup>&frasl;<sub>2</sub>(5k<sup>2</sup>+3k)</span></p>
+                                                            <p>על ידי הצבה: <span className="indFix2" id="ind4" dir="ltr"><sup>1</sup>&frasl;<sub>2</sub>(5k<sup>2</sup>+3k)+[5(k+1)-1] = <sup>1</sup>&frasl;<sub>2</sub>[5(k+1)<sup>2</sup>+3(k+1)]</span></p>
+                                                            <p>נכפיל ב- 2: <span className="indFix2" style={{ marginRight: 118 }} dir="ltr">(5k<sup>2</sup>+3k)+2[5(k+1)-1] = [5(k+1)<sup>2</sup>+3(k+1)]</span></p>
+                                                            <p>פתיחת סוגריים: <span className="indFix2" style={{ marginRight: 79 }} dir="ltr">5k<sup>2</sup>+3k+10k+8 = 5k<sup>2</sup>+10k+5+3k+3</span></p>
+                                                            <p>כינוס: <span className="indFix2" id="ind5" dir="ltr">5k<sup>2</sup>+13k+8 = 5k<sup>2</sup>+13k+8</span></p>
 
                                                             <br />
 

@@ -9,7 +9,7 @@ class InequationItem extends Component {
                 <td>
                     <div className="itemPlacement">
                         <div className="item">
-                            <p><strong><span style={{ fontSize: "17px" }}>אי שוויון עם ערך מוחלט</span></strong></p>
+                            <p><strong><span className="itemTitle">אי שוויון עם ערך מוחלט</span></strong></p>
                             <ul>
                                 <li>חזרה ותזכורת</li>
                                 <li>אי שוויון עם ערך מוחלט</li>

@@ -1,14 +1,24 @@
 .payment {
-    min-height: 100vh;
+    min-height: 110vh;
     padding-top: 50px;
+    overflow: hidden;
     background-image: url("../../img/underConstruction3.jpg");
     background-repeat: no-repeat;
-    /* background-size: 800px;*/
-    background-position-x: 100px;
-    background-position-y: -20px;
-  }
+    background-size: contain;
+}
   
-  .payment h4 {
-    position: relative;
-    top: 430px;
+.payment h4 {
+  position: relative;
+  top: 430px;
+}
+
+
+@media only screen and (max-width: 767px) {
+  .payment {
+    background-image: url("../../img/underConstruction5.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: 48%;
+    background-position-y: -40px;
   }
+}

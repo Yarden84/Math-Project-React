@@ -9,7 +9,7 @@ class InductionItem extends Component {
                 <td>
                     <div className="itemPlacement">
                         <div className="item">
-                            <p><strong><span style={{ fontSize: "17px" }}>אינדוקציה מתמטית</span></strong></p>
+                            <p><strong><span className="itemTitle">אינדוקציה מתמטית</span></strong></p>
                             <ul>
                                 <li>רקע</li>
                                 <li>אינדוקציה של סדרות</li>

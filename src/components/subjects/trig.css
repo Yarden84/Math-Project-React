@@ -85,6 +85,7 @@
 
   #trigBlock1{
     display: block;
+    height: 100%;
   }
 
   #trigBlock1R{
@@ -197,9 +198,6 @@
 }
 
 @media only screen and (max-width: 767px) {
-  #trigBlock1{
-    height: 770px;
-  }
 
   #trigBlock1R{
     width: 65%;
@@ -232,9 +230,6 @@
 }
 
 @media only screen and (max-width: 550px) {
-  #trigBlock1 {
-    height: 820px;
-  }
   
   #trigBlock1R {
     width: 55%;
@@ -263,5 +258,74 @@
   } 
   #trigTable td:nth-child(5) {
     width: 101px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+
+  #trigBlock1L {
+    margin-right: 8px;
+  }
+  #trigBlock1L img {
+    width: 145px;
+    margin-bottom: 125px;
+    margin-top: 50px;
+  }
+  #tr1 {
+    width: initial;
+  }
+
+  #trigTable {
+    font-size: 11px;
+  }
+  #trigTable img{
+    width: 65px;
+  }
+  #trigTable td:nth-child(n+2):nth-child(-n+4) {
+    width: 36px;
+  } 
+  #trigTable td:nth-child(5) {
+    width: 66px;
+  }
+  
+}
+
+
+
+@media only screen and (max-width: 424px) {
+  
+  #trigBlock1L {
+    margin-right: 0px;
+  }
+  #trigBlock1L img {
+    width: 145px;
+    margin-bottom: 125px;
+    margin-top: 50px;
+  } 
+  
+}
+
+@media only screen and (max-width: 381px) {
+  #sentence1 {
+    width: 160%;
+  }
+  #tr1 {
+    width: 180%;
+  }
+  #trigBlock3L {
+    margin-right: 0;
+  }
+}
+
+@media only screen and (max-width: 364px) {
+  #trigTable {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 330px) {
+  #trigBlock3 {
+    position: relative;
+    left: 10px;
   }
 }

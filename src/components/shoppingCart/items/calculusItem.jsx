@@ -9,7 +9,7 @@ class CalculusItem extends Component {
                 <td>
                     <div className="itemPlacement">
                         <div className="item">
-                            <p><strong><span style={{ fontSize: "17px" }}>חשבון דיפרנציאלי ואינטגרלי</span></strong></p>
+                            <p><strong><span className="itemTitle">חשבון דיפרנציאלי ואינטגרלי</span></strong></p>
                             <ul>
                                 <ul>
                                     <strong>חשבון דיפרנציאלי</strong>

@@ -26,11 +26,32 @@
     margin-bottom: 20px;
 }
 
-
+.itemTitle{
+    font-size: 17px;
+}
 
 @media only screen and (max-width: 767px) {
     .itemPlacement{
         width: 230px;
         margin-right: 90px;
+    }
+}
+
+@media only screen and (max-width: 505px) {
+    .SCContent tbody{
+        font-size: 12px;
+    }
+    .itemPlacement {
+        width: 140px;
+        margin-right: 40px;
+    }
+    .itemTitle{
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 424px) {
+    #paymentBtn {
+        margin-left: 10px;
     }
 }

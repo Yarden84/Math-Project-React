@@ -4,8 +4,22 @@
     top: 51px;
     background-color: #3a87b4; 
     color: white;
-    width: 206px;  
+    width: 206px; 
+    overflow-y: auto;
+    max-height: 500px; 
     z-index: 2;
+}
+
+#searchResult::-webkit-scrollbar {
+    width: 10px;
+}
+
+#searchResult::-webkit-scrollbar-track {
+    background: #2E5368; 
+}
+
+#searchResult::-webkit-scrollbar-thumb {
+    background: #0B2A3C; 
 }
 
 #searchResult .searchLink{
@@ -32,7 +46,6 @@
 
 
 @media only screen and (max-width: 991px) {
-
     #searchResult{
         position: absolute;
         left: -3px;
@@ -42,6 +55,13 @@
         width: 206px;  
         z-index: 2;
     }
-    
-  
-  }
+}
+
+@media only screen and (max-width: 510px) {
+    #searchResult {
+        left: 50%;
+        transform: translate(-50%);
+        top: 115px;
+        width: 194px;
+    }
+}

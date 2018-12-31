@@ -9,7 +9,7 @@ class TrigItem extends Component {
                 <td>
                     <div className="itemPlacement">
                         <div className="item">
-                            <p><strong><span style={{ fontSize: "17px" }}>טריגונומטריה</span></strong></p>
+                            <p><strong><span className="itemTitle">טריגונומטריה</span></strong></p>
                             <ul>
                                 <ul>
                                     <li>רקע</li>

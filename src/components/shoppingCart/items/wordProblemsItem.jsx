@@ -9,7 +9,7 @@ class WordProblemsItem extends Component {
                 <td>
                     <div className="itemPlacement">
                         <div className="item">
-                            <p><strong><span style={{ fontSize: "17px" }}>בעיות מילוליות</span></strong></p>
+                            <p><strong><span className="itemTitle">בעיות מילוליות</span></strong></p>
                             <ul>
                                 <li>רקע</li>
                                 <li>תרגול נעלמים ושליפת נתונים</li>

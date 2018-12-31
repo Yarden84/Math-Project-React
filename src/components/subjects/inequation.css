@@ -29,8 +29,28 @@
       margin-bottom: 7px;
   }
 
-  
+  #inBlock{
+    display: block;
+  }
 
+  #inBlockR{
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  #inBlockL{
+    display: inline-block;
+    margin-right: 10px;
+    text-align: center;
+  }
+
+  #inBlockL table tr td{
+    padding: 0 15px;
+  }
+
+  #inBlockL table tr:nth-child(n+2) td{
+    padding-top: 10px;
+  }
 
   .react-slidedown.my-dropdown-slidedown1 {
     transition-duration: 1s;
@@ -59,4 +79,15 @@
   }
 }
 
+@media only screen and (max-width: 364px) {
+  #inequationImg1, #inequationImg2 {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 330px) {
+  #inBlockL table tr td{
+    padding: 0 10px;
+  }
+}
 
