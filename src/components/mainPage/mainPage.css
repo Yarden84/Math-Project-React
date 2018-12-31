@@ -192,6 +192,9 @@
       margin: auto;
       margin-top: 25px;
     }
+    #coverImg #headline h1 #understand {
+      font-size: 120px;
+    }
     #line {
       top: 56%;
       right: 30px;
@@ -209,13 +212,13 @@
       margin-top: 50px;
     }
     #coverImg #headline h1 #understand {
-      font-size: 110px;
+      font-size: 100px;
     }
     #coverImg #headline h1 #math {
-      font-size: 50px;
+      font-size: 42px;
     }
     #line {
-      top: 56%;
+      top: 54%;
       right: 50%;
       transform: translate(50%);
     }
