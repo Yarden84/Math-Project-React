@@ -71,5 +71,6 @@
   @media only screen and (max-width: 424px) {
     .aboutContent {
       border-radius: 0;
+      padding-left: 35px !important;
     }
   }
